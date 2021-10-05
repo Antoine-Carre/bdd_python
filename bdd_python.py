@@ -5,6 +5,8 @@ import numpy as np
 import plotly.express as px
 from datetime import date
 
+st.image('https://soliguide.fr/assets/images/logo.png',width=600)
+
 df = pd.read_csv("./data_csv/fiche_figure1.csv")
 s = pd.read_csv("./data_csv/searchWithDatePresentation2.csv")
 
