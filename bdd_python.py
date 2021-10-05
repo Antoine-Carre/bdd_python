@@ -5,6 +5,11 @@ import numpy as np
 import plotly.express as px
 from datetime import date
 
+# option
+st.set_page_config(page_title="Base de données - Septembre 2021",
+                   page_icon="🚀",
+                   layout="wide",)
+
 st.image('https://soliguide.fr/assets/images/logo.png',width=600)
 
 df = pd.read_csv("./data_csv/fiche_figure1.csv")
