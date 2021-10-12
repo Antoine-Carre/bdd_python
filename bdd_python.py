@@ -202,10 +202,13 @@ annotationsSearch = dict(xref='paper', yref='paper', x=0.055, y=1,
 figSearch.update_traces( mode='lines+markers', hovertemplate=None)
 figSearch.update_layout(hovermode="x unified", title_font_family="Times New Roman", annotations=[annotationsSearch])
 
+st.markdown('### Nombre de fiches crées par mois ')
 st.plotly_chart(fig1, use_container_width=True)
 
+st.markdown('### Nombre de fiches crées par mois (cumulé)')
 st.plotly_chart(figBar, use_container_width=True)
 
+st.markdown('### Evolution du nombre de recherches sur Soliguide')
 st.plotly_chart(figSearch, use_container_width=True)
 
 
