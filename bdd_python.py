@@ -363,6 +363,11 @@ st.markdown('### Evolution du nombre de comptes professionnels')
 st.plotly_chart(figComptePro, use_container_width=True)
 
 # Création de la carte avec pour centre : le centre de la France
+st.markdown('### Figure 5: Nombre de fiches suivies (en ligne et en brouillon) par commune')
 source_code = HtmlFile.read() 
 components.html(source_code, height = 600)
+
+st.markdown('**Echelle de couleur utilisée (très peu de communes ont entre 17 et 146 fiches):**')
+st.image('./data_csvScale_nber_of_fiches.png .png',width=600)
+
 
