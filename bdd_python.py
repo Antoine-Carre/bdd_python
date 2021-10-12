@@ -367,7 +367,6 @@ st.markdown('### Figure 5: Nombre de fiches suivies (en ligne et en brouillon) p
 source_code = HtmlFile.read() 
 components.html(source_code, height = 600)
 
-st.markdown('**Echelle de couleur utilisée (très peu de communes ont entre 17 et 146 fiches):**')
-st.image('./data_csv/Scale_nber_of_fiches.png')
+
 
 
