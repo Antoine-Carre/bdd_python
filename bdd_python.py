@@ -4,6 +4,7 @@ import pandas as pd
 import numpy as np
 import plotly.express as px
 from datetime import date
+import streamlit.components.v1 as components
 
 # option
 st.set_page_config(page_title="Base de données - Septembre 2021",
