@@ -212,10 +212,10 @@ figSearch.update_layout(hovermode="x unified", title_font_family="Times New Roma
 st.markdown('### Figure 1: Nombre de fiches crées par mois ')
 st.plotly_chart(fig1, use_container_width=True)
 
-st.markdown('### Figure 2: Nombre de fiches crées par mois (cumulé)')
+st.markdown('### Figure 1bis: Nombre de fiches crées par mois (cumulé)')
 st.plotly_chart(figBar, use_container_width=True)
 
-st.markdown('### Figure 3: Evolution du nombre de recherches sur Soliguide')
+st.markdown('### Figure 2: Evolution du nombre de recherches sur Soliguide')
 st.plotly_chart(figSearch, use_container_width=True)
 
 if TerrG=='06':
@@ -359,7 +359,7 @@ annotationsCompte = dict(xref='paper', yref='paper', x=0.055, y=1,
 figComptePro.update_layout(title=titleCompte, title_font_family="Times New Roman",
                                annotations=[annotationsCompte])
 
-st.markdown('### Figure 4: Evolution du nombre de comptes professionnels')
+st.markdown('### Figure 3: Evolution du nombre de comptes professionnels')
 st.plotly_chart(figComptePro, use_container_width=True)
 
 # Création de la carte avec pour centre : le centre de la France
