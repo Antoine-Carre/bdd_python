@@ -35,6 +35,9 @@ if TerrG=='général':
     s1 = pd.merge(s['Unnamed: 0'],s1, how='left', left_index=True, right_index=True)
 
     figSearch = px.line(s1,x='Unnamed: 0', y=s1.columns.values.tolist()[1:])
+    
+    figComptePro = px.bar(compteProCum, x='datePresentation', y='Général cumulé')
+
 
 if TerrG=='06':
     fig1 = px.line(df, x="Date_saisie", y=['Suivies (dep:06)','En ligne (dep:06)', 'En brouillon (dep:06)','Mise à jour (dep:06)', 
