@@ -211,4 +211,147 @@ st.plotly_chart(figBar, use_container_width=True)
 st.markdown('### Evolution du nombre de recherches sur Soliguide')
 st.plotly_chart(figSearch, use_container_width=True)
 
+if TerrG=='06':
+    st.write('Sélectionnez votre secteur :')
+    cumul = ['06', '06 cumulé']
+    cumul = st.selectbox('', cumul)
+
+    if cumul=='06':
+        figComptePro = px.bar(compteProCum, x='datePresentation', y='06')
+    if cumul=='06 cumulé':
+        figComptePro = px.bar(compteProCum, x='datePresentation', y='06 cumulé')
+
+if TerrG=='33':
+    st.write('Sélectionnez votre secteur :')
+    cumul = ['33', '33 cumulé']
+    cumul = st.selectbox('', cumul)
+
+    if cumul=='33':
+        figComptePro = px.bar(compteProCum, x='datePresentation', y=cumul)
+    if cumul=='33 cumulé':
+        figComptePro = px.bar(compteProCum, x='datePresentation', y=cumul)
+
+if TerrG=='44':
+    st.write('Sélectionnez votre secteur :')
+    cumul = ['44', '44 cumulé']
+    cumul = st.selectbox('', cumul)
+
+    if cumul=='44':
+        figComptePro = px.bar(compteProCum, x='datePresentation', y=cumul)
+    if cumul=='44 cumulé':
+        figComptePro = px.bar(compteProCum, x='datePresentation', y=cumul)
+
+if TerrG=='67':
+    st.write('Sélectionnez votre secteur :')
+    cumul = ['67', '67 cumulé']
+    cumul = st.selectbox('', cumul)
+
+    if cumul=='67':
+        figComptePro = px.bar(compteProCum, x='datePresentation', y=cumul)
+    if cumul=='67 cumulé':
+        figComptePro = px.bar(compteProCum, x='datePresentation', y=cumul)
+
+if TerrG=='75':
+    st.write('Sélectionnez votre secteur :')
+    cumul = ['75', '75 cumulé']
+    cumul = st.selectbox('', cumul)
+
+    if cumul=='75':
+        figComptePro = px.bar(compteProCum, x='datePresentation', y=cumul)
+    if cumul=='75 cumulé':
+        figComptePro = px.bar(compteProCum, x='datePresentation', y=cumul)
+
+if TerrG=='77':
+    st.write('Sélectionnez votre secteur :')
+    cumul = ['77', '77 cumulé']
+    cumul = st.selectbox('', cumul)
+
+    if cumul=='77':
+        figComptePro = px.bar(compteProCum, x='datePresentation', y=cumul)
+    if cumul=='77 cumulé':
+        figComptePro = px.bar(compteProCum, x='datePresentation', y=cumul)
+
+if TerrG=='78':
+    st.write('Sélectionnez votre secteur :')
+    cumul = ['78', '78 cumulé']
+    cumul = st.selectbox('', cumul)
+
+    if cumul=='78':
+        figComptePro = px.bar(compteProCum, x='datePresentation', y=cumul)
+    if cumul=='78 cumulé':
+        figComptePro = px.bar(compteProCum, x='datePresentation', y=cumul)
+
+if TerrG=='91':
+    st.write('Sélectionnez votre secteur :')
+    cumul = ['91', '91 cumulé']
+    cumul = st.selectbox('', cumul)
+
+    if cumul=='91':
+        figComptePro = px.bar(compteProCum, x='datePresentation', y=cumul)
+    if cumul=='91 cumulé':
+        figComptePro = px.bar(compteProCum, x='datePresentation', y=cumul) 
+
+if TerrG=='92':
+    st.write('Sélectionnez votre secteur :')
+    cumul = ['92', '92 cumulé']
+    cumul = st.selectbox('', cumul)
+
+    if cumul=='92':
+        figComptePro = px.bar(compteProCum, x='datePresentation', y=cumul)
+    if cumul=='92 cumulé':
+        figComptePro = px.bar(compteProCum, x='datePresentation', y=cumul) 
+
+if TerrG=='93':
+    st.write('Sélectionnez votre secteur :')
+    cumul = ['93', '93 cumulé']
+    cumul = st.selectbox('', cumul)
+
+    if cumul=='93':
+        figComptePro = px.bar(compteProCum, x='datePresentation', y=cumul)
+    if cumul=='93 cumulé':
+        figComptePro = px.bar(compteProCum, x='datePresentation', y=cumul) 
+
+if TerrG=='94':
+    st.write('Sélectionnez votre secteur :')
+    cumul = ['94', '94 cumulé']
+    cumul = st.selectbox('', cumul)
+
+    if cumul=='94':
+        figComptePro = px.bar(compteProCum, x='datePresentation', y=cumul)
+    if cumul=='94 cumulé':
+        figComptePro = px.bar(compteProCum, x='datePresentation', y=cumul) 
+
+if TerrG=='95':
+    st.write('Sélectionnez votre secteur :')
+    cumul = ['95', '95 cumulé']
+    cumul = st.selectbox('', cumul)
+
+    if cumul=='95':
+        figComptePro = px.bar(compteProCum, x='datePresentation', y=cumul)
+    if cumul=='94 cumulé':
+        figComptePro = px.bar(compteProCum, x='datePresentation', y=cumul) 
+
+#Compte Pro
+figComptePro.update_xaxes(title_text="Date d'ajout des comptes pro'", title_standoff=0.6,
+                              title_font_family="Times New Roman")
+figComptePro.update_yaxes(title_text="Nombre de comptes pro ",
+                              title_font_family="Times New Roman")
+titleCompte = {
+        'text': 'Figure 3 : Nombre d\'organisations actives par Territoire cumulé',
+        'y': 0.9,
+        'x': 0.5,
+        'xanchor': "center",
+        'yanchor': 'top'}
+annotationsCompte = dict(xref='paper', yref='paper', x=0.055, y=1,
+                             xanchor='center', yanchor='top',
+                             text='Fait le: ' + str("31 mai 2021"),
+                             font=dict(family='Arial',
+                                       size=12,
+                                       color='rgb(150,150,150)'),
+                             showarrow=False)
+figComptePro.update_layout(title=titleCompte, title_font_family="Times New Roman",
+                               annotations=[annotationsCompte])
+
+st.markdown('### Evolution du nombre de comptes professionnels')
+st.plotly_chart(figComptePro, use_container_width=True)
 
