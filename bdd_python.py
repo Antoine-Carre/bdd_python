@@ -363,6 +363,7 @@ annotationsCompte = dict(xref='paper', yref='paper', x=0.055, y=1,
                              showarrow=False)
 figComptePro.update_layout(title=titleCompte, title_font_family="Times New Roman",
                                annotations=[annotationsCompte])
+figComptePro.update_traces(hovertemplate='Mois: %{x}<br> Nbre de comptes: %{y}') 
 
 st.markdown('### Figure 3: Evolution du nombre de comptes professionnels')
 st.plotly_chart(figComptePro, use_container_width=True)
