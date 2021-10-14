@@ -206,6 +206,7 @@ figSearch.update_yaxes(title_text="Nombre de recherches (non cumulé)", title_fo
 
 annotationsSearch = dict(xref='paper', yref='paper', x=0.055, y=1,
                                 xanchor='center', yanchor='top',
+                                text='Fait le: ' + str("1 octobre 2021"),
                                 font=dict(family='Arial',
                                         size=12,
                                         color='rgb(150,150,150)'),
