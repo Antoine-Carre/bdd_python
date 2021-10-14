@@ -348,22 +348,17 @@ figComptePro.update_xaxes(title_text="Date d'ajout des comptes pro'", title_stan
                               title_font_family="Times New Roman")
 figComptePro.update_yaxes(title_text="Nombre de comptes pro ",
                               title_font_family="Times New Roman")
-titleCompte = {
-        'text': 'Figure 3 : Nombre d\'organisations actives par Territoire cumulé',
-        'y': 0.9,
-        'x': 0.5,
-        'xanchor': "center",
-        'yanchor': 'top'}
+
 annotationsCompte = dict(xref='paper', yref='paper', x=0.055, y=1,
                              xanchor='center', yanchor='top',
-                             text='Fait le: ' + str("31 mai 2021"),
+                             text='Fait le: ' + str("1 octobre 2021"),
                              font=dict(family='Arial',
                                        size=12,
                                        color='rgb(150,150,150)'),
                              showarrow=False)
-figComptePro.update_layout(title=titleCompte, title_font_family="Times New Roman",
+figComptePro.update_layout(title_font_family="Times New Roman",
                                annotations=[annotationsCompte])
-figComptePro.update_traces(hovertemplate='Mois: %{x}<br> Nbre de comptes: %{y}') 
+figComptePro.update_traces(hovertemplate='Mois: %{x}<br> Nbre de comptes pro : %{y}') 
 
 st.markdown('### Figure 3: Evolution du nombre de comptes professionnels')
 st.plotly_chart(figComptePro, use_container_width=True)
