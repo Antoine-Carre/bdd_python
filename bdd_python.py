@@ -194,11 +194,13 @@ figBar.update_yaxes(title_text="Nombre de fiches (non cumulé)", title_font_fami
 
 
 annotations = dict(xref='paper', yref='paper', x=0.055, y=1,
-                            xanchor='center', yanchor='top',
-                            font=dict(family='Arial',
-                                      size=12,
-                                      color='rgb(150,150,150)'),
-                            showarrow=False)
+                             xanchor='center', yanchor='top',
+                             text='Fait le: ' + str("1 octobre 2021"),
+                             font=dict(family='Arial',
+                                       size=12,
+                                       color='rgb(150,150,150)'),
+                             showarrow=False)
+
 figBar.update_layout(xaxis=dict(tickformat="%B %Y"))
 figBar.update_layout(hovermode="x unified", title_font_family="Times New Roman", annotations=[annotations])
 
