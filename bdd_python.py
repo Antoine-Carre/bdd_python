@@ -177,13 +177,14 @@ if TerrG=='95':
 fig1.update_xaxes(title_text="Date de création (de la fiche ou du compte pro de la fiche) ou date de la dernière mise à jour de la fiche", title_standoff=0.6, title_font_family="Times New Roman")
 fig1.update_yaxes(title_text="Nombre de fiches (non cumulé)", title_font_family="Times New Roman")
 
-
 annotations = dict(xref='paper', yref='paper', x=0.055, y=1,
-                            xanchor='center', yanchor='top',
-                            font=dict(family='Arial',
-                                      size=12,
-                                      color='rgb(150,150,150)'),
-                            showarrow=False)
+                             xanchor='center', yanchor='top',
+                             text='Fait le: ' + str("1 octobre 2021"),
+                             font=dict(family='Arial',
+                                       size=12,
+                                       color='rgb(150,150,150)'),
+                             showarrow=False)
+
 fig1.update_traces( mode='lines+markers', hovertemplate=None)
 fig1.update_layout(xaxis=dict(tickformat="%B %Y"))
 fig1.update_layout(hovermode="x unified", title_font_family="Times New Roman", annotations=[annotations])
@@ -205,13 +206,14 @@ figSearch.update_xaxes(title_text="Date des recherches", title_standoff=0.6, tit
 figSearch.update_yaxes(title_text="Nombre de recherches (non cumulé)", title_font_family="Times New Roman")
 
 annotationsSearch = dict(xref='paper', yref='paper', x=0.055, y=1,
-                                xanchor='center', yanchor='top',
-                                text='Fait le: ' + str("1 octobre 2021"),
-                                font=dict(family='Arial',
-                                        size=12,
-                                        color='rgb(150,150,150)'),
-                                showarrow=False)
+                             xanchor='center', yanchor='top',
+                             text='Fait le: ' + str("1 octobre 2021"),
+                             font=dict(family='Arial',
+                                       size=12,
+                                       color='rgb(150,150,150)'),
+                             showarrow=False)
 figSearch.update_traces( mode='lines+markers', hovertemplate=None)
+                         
 figSearch.update_layout(xaxis=dict(tickformat="%B %Y"))
 figSearch.update_layout(hovermode="x", title_font_family="Times New Roman", annotations=[annotationsSearch])
 
