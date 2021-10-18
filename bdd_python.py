@@ -254,6 +254,9 @@ if TerrG=='33':
     if cumul=='33 cumulé':
         figComptePro = px.bar(compteProCum, x='datePresentation', y=cumul)
 
+    fig4 = px.line(df4[df4['territoire']=='Département 33'], x='Date', y=['Utilisateurs','Sessions','Pages vues'])        
+
+        
 if TerrG=='44':
     st.write('Sélectionnez votre secteur :')
     cumul = ['44', '44 cumulé']
@@ -264,6 +267,8 @@ if TerrG=='44':
     if cumul=='44 cumulé':
         figComptePro = px.bar(compteProCum, x='datePresentation', y=cumul)
 
+    fig4 = px.line(df4[df4['territoire']=='Département 44'], x='Date', y=['Utilisateurs','Sessions','Pages vues'])        
+        
 if TerrG=='67':
     st.write('Sélectionnez votre secteur :')
     cumul = ['67', '67 cumulé']
@@ -274,6 +279,8 @@ if TerrG=='67':
     if cumul=='67 cumulé':
         figComptePro = px.bar(compteProCum, x='datePresentation', y=cumul)
 
+    fig4 = px.line(df4[df4['territoire']=='Département 67'], x='Date', y=['Utilisateurs','Sessions','Pages vues'])             
+        
 if TerrG=='75':
     st.write('Sélectionnez votre secteur :')
     cumul = ['75', '75 cumulé']
@@ -284,6 +291,9 @@ if TerrG=='75':
     if cumul=='75 cumulé':
         figComptePro = px.bar(compteProCum, x='datePresentation', y=cumul)
 
+    fig4 = px.line(df4[df4['territoire']=='Département 75'], x='Date', y=['Utilisateurs','Sessions','Pages vues'])        
+        
+       
 if TerrG=='77':
     st.write('Sélectionnez votre secteur :')
     cumul = ['77', '77 cumulé']
@@ -294,6 +304,8 @@ if TerrG=='77':
     if cumul=='77 cumulé':
         figComptePro = px.bar(compteProCum, x='datePresentation', y=cumul)
 
+    fig4 = px.line(df4[df4['territoire']=='Département 77'], x='Date', y=['Utilisateurs','Sessions','Pages vues'])        
+        
 if TerrG=='78':
     st.write('Sélectionnez votre secteur :')
     cumul = ['78', '78 cumulé']
@@ -304,6 +316,8 @@ if TerrG=='78':
     if cumul=='78 cumulé':
         figComptePro = px.bar(compteProCum, x='datePresentation', y=cumul)
 
+    fig4 = px.line(df4[df4['territoire']=='Département 78'], x='Date', y=['Utilisateurs','Sessions','Pages vues'])        
+        
 if TerrG=='91':
     st.write('Sélectionnez votre secteur :')
     cumul = ['91', '91 cumulé']
@@ -313,6 +327,8 @@ if TerrG=='91':
         figComptePro = px.bar(compteProCum, x='datePresentation', y=cumul)
     if cumul=='91 cumulé':
         figComptePro = px.bar(compteProCum, x='datePresentation', y=cumul) 
+
+    fig4 = px.line(df4[df4['territoire']=='Département 91'], x='Date', y=['Utilisateurs','Sessions','Pages vues'])        
 
 if TerrG=='92':
     st.write('Sélectionnez votre secteur :')
@@ -324,6 +340,8 @@ if TerrG=='92':
     if cumul=='92 cumulé':
         figComptePro = px.bar(compteProCum, x='datePresentation', y=cumul) 
 
+    fig4 = px.line(df4[df4['territoire']=='Département 92'], x='Date', y=['Utilisateurs','Sessions','Pages vues'])        
+        
 if TerrG=='93':
     st.write('Sélectionnez votre secteur :')
     cumul = ['93', '93 cumulé']
@@ -334,6 +352,8 @@ if TerrG=='93':
     if cumul=='93 cumulé':
         figComptePro = px.bar(compteProCum, x='datePresentation', y=cumul) 
 
+    fig4 = px.line(df4[df4['territoire']=='Département 93'], x='Date', y=['Utilisateurs','Sessions','Pages vues'])        
+        
 if TerrG=='94':
     st.write('Sélectionnez votre secteur :')
     cumul = ['94', '94 cumulé']
@@ -344,6 +364,8 @@ if TerrG=='94':
     if cumul=='94 cumulé':
         figComptePro = px.bar(compteProCum, x='datePresentation', y=cumul) 
 
+    fig4 = px.line(df4[df4['territoire']=='Département 94'], x='Date', y=['Utilisateurs','Sessions','Pages vues'])        
+        
 if TerrG=='95':
     st.write('Sélectionnez votre secteur :')
     cumul = ['95', '95 cumulé']
@@ -354,6 +376,8 @@ if TerrG=='95':
     if cumul=='94 cumulé':
         figComptePro = px.bar(compteProCum, x='datePresentation', y=cumul) 
 
+    fig4 = px.line(df4[df4['territoire']=='Département 95'], x='Date', y=['Utilisateurs','Sessions','Pages vues'])        
+        
 #Compte Pro
 figComptePro.update_xaxes(title_text="Date d'ajout des comptes pro'", title_standoff=0.6,
                               title_font_family="Times New Roman")
