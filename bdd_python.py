@@ -236,6 +236,7 @@ if TerrG=='06':
     cumul = st.selectbox('', cumul)
  
     if cumul=='06':
+      compteProCum.columns = compteProCum.columns.astype(str)
       figComptePro = px.bar(compteProCum, x='datePresentation', y= '06')
       
     if cumul=='06 cumulé':
