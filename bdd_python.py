@@ -18,6 +18,7 @@ st.write("[Lien vers la documentation et les explications](https://www.notion.so
 df = pd.read_csv("./data_csv/fiche_figure1.csv")
 s = pd.read_csv("./data_csv/searchWithDatePresentation2.csv")
 compteProCum = pd.read_csv("./data_csv/orga_figure3.csv")
+compteProCum.columns = compteProCum.columns.astype(str)
 df4 = pd.read_csv("data_csv/GAdata.csv")
 
 HtmlFile = open("./data_csv/map.html", 'r', encoding='utf-8')
@@ -236,7 +237,7 @@ if TerrG=='06':
     cumul = st.selectbox('', cumul)
 
     if cumul=='06':
-        figComptePro = px.bar(compteProCum, x='datePresentation', y='6')
+        figComptePro = px.bar(compteProCum, x='datePresentation', y='06')
     if cumul=='06 cumulé':
         figComptePro = px.bar(compteProCum, x='datePresentation', y='06 cumulé')
 
