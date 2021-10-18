@@ -237,7 +237,7 @@ if TerrG=='06':
  
     if cumul=='06':
       compteProCum.columns = compteProCum.columns.astype(str)
-      figComptePro = px.bar(compteProCum, x='datePresentation', y=compteProCum['6'])
+      figComptePro = px.bar(compteProCum, x='datePresentation', y='6')
       
     if cumul=='06 cumulé':
         figComptePro = px.bar(compteProCum, x='datePresentation', y='06 cumulé')
