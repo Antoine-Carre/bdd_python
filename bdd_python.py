@@ -18,6 +18,8 @@ st.write("[Lien vers la documentation et les explications](https://www.notion.so
 df = pd.read_csv("./data_csv/fiche_figure1.csv")
 s = pd.read_csv("./data_csv/searchWithDatePresentation2.csv")
 compteProCum = pd.read_csv("./data_csv/orga_figure3.csv")
+df4 = pd.read_csv("data_csv/GAdata.csv")
+
 HtmlFile = open("./data_csv/map.html", 'r', encoding='utf-8')
 
 
@@ -238,6 +240,8 @@ if TerrG=='06':
     if cumul=='06 cumulé':
         figComptePro = px.bar(compteProCum, x='datePresentation', y='06 cumulé')
 
+    fig4 = px.line(df4[df4['territoire']=='Département 06'], x='Date', y=['Utilisateurs','Sessions','Pages vues'])        
+
 if TerrG=='33':
     st.write('Sélectionnez votre secteur :')
     cumul = ['33', '33 cumulé']
@@ -367,6 +371,22 @@ figComptePro.update_traces(hovertemplate='Mois: %{x}<br> Nbre de comptes pro : %
 
 st.markdown('### Figure 3: Evolution du nombre de comptes professionnels')
 st.plotly_chart(figComptePro, use_container_width=True)
+
+fig4.update_xaxes(title_text="Intervalle de temps en mois", title_standoff=0.6, title_font_family="Times New Roman")
+fig4.update_yaxes(title_text="Nombre d'utilisateurs/sessions/pages vues", title_font_family="Times New Roman")
+annotations = dict(xref='paper', yref='paper', x=0.055, y=1,
+                       xanchor='center', yanchor='top',
+                       font=dict(family='Arial',
+                                 size=12,
+                                 color='rgb(150,150,150)'),
+                       showarrow=False)
+fig4.update_traces( mode='lines+markers', hovertemplate=None)
+fig4.update_layout(hovermode="x unified", title_font_family="Times New Roman", annotations=[annotations])
+fig4.update_layout(xaxis=dict(tickformat="%B-%Y"))
+fig4.update_layout(hovermode="x unified", title_font_family="Times New Roman", annotations=[annotations])
+
+st.markdown('### Figure 4 : Evolution du nombre d\'utilisateurs, de sessions et pages vues')
+st.plotly_chart(fig4, use_container_width=True)
 
 # Création de la carte avec pour centre : le centre de la France
 st.markdown('### Figure 5: Nombre de fiches suivies (en ligne et en brouillon) par commune')
