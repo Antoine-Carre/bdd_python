@@ -398,7 +398,7 @@ figComptePro.update_traces(hovertemplate='Mois: %{x}<br> Nbre de comptes pro : %
 st.markdown('### Figure 3: Evolution du nombre de comptes professionnels')
 st.plotly_chart(figComptePro, use_container_width=True)
 
-if TerrG!='général':
+if TerrG != 'général':
   
     fig4.update_xaxes(title_text="Intervalle de temps en mois", title_standoff=0.6, title_font_family="Times New Roman")
     fig4.update_yaxes(title_text="Nombre d'utilisateurs/sessions/pages vues", title_font_family="Times New Roman")
