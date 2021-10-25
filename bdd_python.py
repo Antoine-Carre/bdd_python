@@ -244,7 +244,7 @@ if TerrG=='06':
     if cumul=='06 cumulé':
         figComptePro = px.bar(compteProCum, x='datePresentation', y='06 cumulé')
 
-    fig4 = px.line(df4[df4['territoire']=='Département 06'], x='Date', y=['Utilisateurs','Sessions','Pages vues'])        
+    fig4 = px.line(df4[df4['territoire']=='Département 06'], x='Unnamed: 0', y=['Utilisateurs','Sessions','Pages vues'])        
 
 if TerrG=='33':
     st.write('Sélectionnez votre secteur :')
@@ -256,7 +256,7 @@ if TerrG=='33':
     if cumul=='33 cumulé':
         figComptePro = px.bar(compteProCum, x='datePresentation', y=cumul)
 
-    fig4 = px.line(df4[df4['territoire']=='Département 33'], x='Date', y=['Utilisateurs','Sessions','Pages vues'])        
+    fig4 = px.line(df4[df4['territoire']=='Département 33'], x='Unnamed: 0', y=['Utilisateurs','Sessions','Pages vues'])        
 
         
 if TerrG=='44':
@@ -269,7 +269,7 @@ if TerrG=='44':
     if cumul=='44 cumulé':
         figComptePro = px.bar(compteProCum, x='datePresentation', y=cumul)
 
-    fig4 = px.line(df4[df4['territoire']=='Département 44'], x='Date', y=['Utilisateurs','Sessions','Pages vues'])        
+    fig4 = px.line(df4[df4['territoire']=='Département 44'], x='Unnamed: 0', y=['Utilisateurs','Sessions','Pages vues'])        
         
 if TerrG=='67':
     st.write('Sélectionnez votre secteur :')
@@ -281,7 +281,7 @@ if TerrG=='67':
     if cumul=='67 cumulé':
         figComptePro = px.bar(compteProCum, x='datePresentation', y=cumul)
 
-    fig4 = px.line(df4[df4['territoire']=='Département 67'], x='Date', y=['Utilisateurs','Sessions','Pages vues'])             
+    fig4 = px.line(df4[df4['territoire']=='Département 67'], x='Unnamed: 0', y=['Utilisateurs','Sessions','Pages vues'])             
         
 if TerrG=='75':
     st.write('Sélectionnez votre secteur :')
@@ -293,7 +293,7 @@ if TerrG=='75':
     if cumul=='75 cumulé':
         figComptePro = px.bar(compteProCum, x='datePresentation', y=cumul)
 
-    fig4 = px.line(df4[df4['territoire']=='Paris+ivry'], x='Date', y=['Utilisateurs','Sessions','Pages vues'])        
+    fig4 = px.line(df4[df4['territoire']=='Paris+ivry'], x='Unnamed: 0', y=['Utilisateurs','Sessions','Pages vues'])        
         
        
 if TerrG=='77':
@@ -306,7 +306,7 @@ if TerrG=='77':
     if cumul=='77 cumulé':
         figComptePro = px.bar(compteProCum, x='datePresentation', y=cumul)
 
-    fig4 = px.line(df4[df4['territoire']=='Département 77'], x='Date', y=['Utilisateurs','Sessions','Pages vues'])        
+    fig4 = px.line(df4[df4['territoire']=='Département 77'], x='Unnamed: 0', y=['Utilisateurs','Sessions','Pages vues'])        
         
 if TerrG=='78':
     st.write('Sélectionnez votre secteur :')
@@ -318,7 +318,7 @@ if TerrG=='78':
     if cumul=='78 cumulé':
         figComptePro = px.bar(compteProCum, x='datePresentation', y=cumul)
 
-    fig4 = px.line(df4[df4['territoire']=='Département 78'], x='Date', y=['Utilisateurs','Sessions','Pages vues'])        
+    fig4 = px.line(df4[df4['territoire']=='Département 78'], x='Unnamed: 0', y=['Utilisateurs','Sessions','Pages vues'])        
         
 if TerrG=='91':
     st.write('Sélectionnez votre secteur :')
@@ -330,7 +330,7 @@ if TerrG=='91':
     if cumul=='91 cumulé':
         figComptePro = px.bar(compteProCum, x='datePresentation', y=cumul) 
 
-    fig4 = px.line(df4[df4['territoire']=='Département 91'], x='Date', y=['Utilisateurs','Sessions','Pages vues'])        
+    fig4 = px.line(df4[df4['territoire']=='Département 91'], x='Unnamed: 0', y=['Utilisateurs','Sessions','Pages vues'])        
 
 if TerrG=='92':
     st.write('Sélectionnez votre secteur :')
@@ -342,7 +342,7 @@ if TerrG=='92':
     if cumul=='92 cumulé':
         figComptePro = px.bar(compteProCum, x='datePresentation', y=cumul) 
 
-    fig4 = px.line(df4[df4['territoire']=='Département 92'], x='Date', y=['Utilisateurs','Sessions','Pages vues'])        
+    fig4 = px.line(df4[df4['territoire']=='Département 92'], x='Unnamed: 0', y=['Utilisateurs','Sessions','Pages vues'])        
         
 if TerrG=='93':
     st.write('Sélectionnez votre secteur :')
@@ -354,7 +354,7 @@ if TerrG=='93':
     if cumul=='93 cumulé':
         figComptePro = px.bar(compteProCum, x='datePresentation', y=cumul) 
 
-    fig4 = px.line(df4[df4['territoire']=='Département 93'], x='Date', y=['Utilisateurs','Sessions','Pages vues'])        
+    fig4 = px.line(df4[df4['territoire']=='Département 93'], x='Unnamed: 0', y=['Utilisateurs','Sessions','Pages vues'])        
         
 if TerrG=='94':
     st.write('Sélectionnez votre secteur :')
@@ -366,7 +366,7 @@ if TerrG=='94':
     if cumul=='94 cumulé':
         figComptePro = px.bar(compteProCum, x='datePresentation', y=cumul) 
 
-    fig4 = px.line(df4[df4['territoire']=='Département 94'], x='Date', y=['Utilisateurs','Sessions','Pages vues'])        
+    fig4 = px.line(df4[df4['territoire']=='Département 94'], x='Unnamed: 0', y=['Utilisateurs','Sessions','Pages vues'])        
         
 if TerrG=='95':
     st.write('Sélectionnez votre secteur :')
@@ -378,7 +378,7 @@ if TerrG=='95':
     if cumul=='94 cumulé':
         figComptePro = px.bar(compteProCum, x='datePresentation', y=cumul) 
 
-    fig4 = px.line(df4[df4['territoire']=='Département 95'], x='Date', y=['Utilisateurs','Sessions','Pages vues'])        
+    fig4 = px.line(df4[df4['territoire']=='Département 95'], x='Unnamed: 0', y=['Utilisateurs','Sessions','Pages vues'])        
         
 #Compte Pro
 figComptePro.update_xaxes(title_text="Date d'ajout des comptes pro'", title_standoff=0.6,
