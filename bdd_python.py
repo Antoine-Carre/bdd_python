@@ -293,7 +293,7 @@ if TerrG=='75':
     if cumul=='75 cumulé':
         figComptePro = px.bar(compteProCum, x='datePresentation', y=cumul)
 
-    fig4 = px.line(df4[df4['territoire']=='Département 75'], x='Date', y=['Utilisateurs','Sessions','Pages vues'])        
+    fig4 = px.line(df4[df4['territoire']=='Paris+ivry'], x='Date', y=['Utilisateurs','Sessions','Pages vues'])        
         
        
 if TerrG=='77':
