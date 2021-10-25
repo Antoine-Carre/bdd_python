@@ -43,7 +43,12 @@ if TerrG=='général':
     s1 = pd.merge(s['datePresentation'],s1, how='left', left_index=True, right_index=True)
 
     figSearch = px.line(s1,x='datePresentation', y=s1.columns.values.tolist()[1:])
-    
+
+    s1_cum = s1[['datePresentation','Recherches général']]
+    s1_cum['Recherches général cumulé'] = s1_cum['Recherches général'].cumsum()
+
+    fig4Bar = px.bar(s1_cum, x="datePresentation",y=['Recherches général cumulé'])
+        
     figComptePro = px.bar(compteProCum, x='datePresentation', y='Général cumulé')
 
 
@@ -57,7 +62,12 @@ if TerrG=='06':
     s1 = pd.merge(s['datePresentation'],s1, how='left', left_index=True, right_index=True)
 
     figSearch = px.line(s1,x='datePresentation', y=s1.columns.values.tolist()[1:])
+    
+    s1_cum = s1[['datePresentation','Recherches dep(06)']]
+    s1_cum['Recherches dep(06) cumulé'] = s1_cum['Recherches dep(06)'].cumsum()
 
+    fig4Bar = px.bar(s1_cum, x="datePresentation",y=['Recherches dep(06) cumulé'])
+    
 if TerrG=='33':
     fig1 = px.line(df, x="Date_saisie", y=['Suivies (dep:33)','En ligne (dep:33)', 'En brouillon (dep:33)','Mise à jour (dep:33)', 
                                                     'Fiches reliées aux comptes pros (dep:33)'])
@@ -69,6 +79,11 @@ if TerrG=='33':
 
     figSearch = px.line(s1,x='datePresentation', y=s1.columns.values.tolist()[1:])
 
+    s1_cum = s1[['datePresentation','Recherches dep(33)']]
+    s1_cum['Recherches dep(33) cumulé'] = s1_cum['Recherches dep(33)'].cumsum()
+
+    fig4Bar = px.bar(s1_cum, x="datePresentation",y=['Recherches dep(33) cumulé'])
+    
 if TerrG=='44':
     fig1 = px.line(df, x="Date_saisie", y=['Suivies (dep:44)','En ligne (dep:44)', 'En brouillon (dep:44)','Mise à jour (dep:44)', 
                                                     'Fiches reliées aux comptes pros (dep:44)'])
@@ -80,6 +95,11 @@ if TerrG=='44':
 
     figSearch = px.line(s1,x='datePresentation', y=s1.columns.values.tolist()[1:])                                            
 
+    s1_cum = s1[['datePresentation','Recherches dep(44)']]
+    s1_cum['Recherches dep(44) cumulé'] = s1_cum['Recherches dep(44)'].cumsum()
+
+    fig4Bar = px.bar(s1_cum, x="datePresentation",y=['Recherches dep(44) cumulé'])
+    
 if TerrG=='67':
     fig1 = px.line(df, x="Date_saisie", y=['Suivies (dep:67)','En ligne (dep:67)', 'En brouillon (dep:67)','Mise à jour (dep:67)', 
                                                     'Fiches reliées aux comptes pros (dep:67)'])         
@@ -91,6 +111,11 @@ if TerrG=='67':
 
     figSearch = px.line(s1,x='datePresentation', y=s1.columns.values.tolist()[1:])                                            
 
+    s1_cum = s1[['datePresentation','Recherches dep(67)']]
+    s1_cum['Recherches dep(67) cumulé'] = s1_cum['Recherches dep(67)'].cumsum()
+
+    fig4Bar = px.bar(s1_cum, x="datePresentation",y=['Recherches dep(67) cumulé'])
+    
 if TerrG=='75':
     fig1 = px.line(df, x="Date_saisie", y=['Suivies (dep:75)','En ligne (dep:75)', 'En brouillon (dep:75)','Mise à jour (dep:75)', 
                                                     'Fiches reliées aux comptes pros (dep:75)'])
@@ -102,6 +127,11 @@ if TerrG=='75':
 
     figSearch = px.line(s1,x='datePresentation', y=s1.columns.values.tolist()[1:])                                           
 
+    s1_cum = s1[['datePresentation','Recherches dep(75)']]
+    s1_cum['Recherches dep(75) cumulé'] = s1_cum['Recherches dep(75)'].cumsum()
+
+    fig4Bar = px.bar(s1_cum, x="datePresentation",y=['Recherches dep(75) cumulé'])
+    
 if TerrG=='77':
     fig1 = px.line(df, x="Date_saisie", y=['Suivies (dep:77)','En ligne (dep:77)', 'En brouillon (dep:77)','Mise à jour (dep:77)', 
                                                     'Fiches reliées aux comptes pros (dep:77)'])
@@ -113,6 +143,11 @@ if TerrG=='77':
 
     figSearch = px.line(s1,x='datePresentation', y=s1.columns.values.tolist()[1:])                                            
 
+    s1_cum = s1[['datePresentation','Recherches dep(77)']]
+    s1_cum['Recherches dep(77) cumulé'] = s1_cum['Recherches dep(77)'].cumsum()
+
+    fig4Bar = px.bar(s1_cum, x="datePresentation",y=['Recherches dep(77) cumulé'])
+    
 if TerrG=='78':
     fig1 = px.line(df, x="Date_saisie", y=['Suivies (dep:78)','En ligne (dep:78)', 'En brouillon (dep:78)','Mise à jour (dep:78)', 
                                                     'Fiches reliées aux comptes pros (dep:78)'])
@@ -123,6 +158,11 @@ if TerrG=='78':
     s1 = pd.merge(s['datePresentation'],s1, how='left', left_index=True, right_index=True)
 
     figSearch = px.line(s1,x='datePresentation', y=s1.columns.values.tolist()[1:])                                            
+
+    s1_cum = s1[['datePresentation','Recherches dep(78)']]
+    s1_cum['Recherches dep(78) cumulé'] = s1_cum['Recherches dep(78)'].cumsum()
+
+    fig4Bar = px.bar(s1_cum, x="datePresentation",y=['Recherches dep(78) cumulé'])    
 
 if TerrG=='91':
     fig1 = px.line(df, x="Date_saisie", y=['Suivies (dep:91)','En ligne (dep:91)', 'En brouillon (dep:91)','Mise à jour (dep:91)', 
@@ -135,6 +175,11 @@ if TerrG=='91':
 
     figSearch = px.line(s1,x='datePresentation', y=s1.columns.values.tolist()[1:])                                           
 
+    s1_cum = s1[['datePresentation','Recherches dep(91)']]
+    s1_cum['Recherches dep(91) cumulé'] = s1_cum['Recherches dep(91)'].cumsum()
+
+    fig4Bar = px.bar(s1_cum, x="datePresentation",y=['Recherches dep(91) cumulé'])    
+
 if TerrG=='92':
     fig1 = px.line(df, x="Date_saisie", y=['Suivies (dep:92)','En ligne (dep:92)', 'En brouillon (dep:92)','Mise à jour (dep:92)', 
                                                     'Fiches reliées aux comptes pros (dep:92)'])
@@ -145,6 +190,11 @@ if TerrG=='92':
     s1 = pd.merge(s['datePresentation'],s1, how='left', left_index=True, right_index=True)
 
     figSearch = px.line(s1,x='datePresentation', y=s1.columns.values.tolist()[1:])                                            
+
+    s1_cum = s1[['datePresentation','Recherches dep(92)']]
+    s1_cum['Recherches dep(92) cumulé'] = s1_cum['Recherches dep(92)'].cumsum()
+
+    fig4Bar = px.bar(s1_cum, x="datePresentation",y=['Recherches dep(92) cumulé'])    
 
 if TerrG=='93':
     fig1 = px.line(df, x="Date_saisie", y=['Suivies (dep:93)','En ligne (dep:93)', 'En brouillon (dep:93)','Mise à jour (dep:93)', 
@@ -157,6 +207,11 @@ if TerrG=='93':
 
     figSearch = px.line(s1,x='datePresentation', y=s1.columns.values.tolist()[1:])                                            
 
+    s1_cum = s1[['datePresentation','Recherches dep(93)']]
+    s1_cum['Recherches dep(93) cumulé'] = s1_cum['Recherches dep(93)'].cumsum()
+
+    fig4Bar = px.bar(s1_cum, x="datePresentation",y=['Recherches dep(93) cumulé'])    
+
 if TerrG=='94':
     fig1 = px.line(df, x="Date_saisie", y=['Suivies (dep:94)','En ligne (dep:94)', 'En brouillon (dep:94)','Mise à jour (dep:94)', 
                                                     'Fiches reliées aux comptes pros (dep:94)'])    
@@ -168,6 +223,11 @@ if TerrG=='94':
 
     figSearch = px.line(s1,x='datePresentation', y=s1.columns.values.tolist()[1:])                                            
 
+    s1_cum = s1[['datePresentation','Recherches dep(94)']]
+    s1_cum['Recherches dep(94) cumulé'] = s1_cum['Recherches dep(94)'].cumsum()
+
+    fig4Bar = px.bar(s1_cum, x="datePresentation",y=['Recherches dep(94) cumulé'])    
+
 if TerrG=='95':
     fig1 = px.line(df, x="Date_saisie", y=['Suivies (dep:95)','En ligne (dep:95)', 'En brouillon (dep:95)','Mise à jour (dep:95)', 
                                                     'Fiches reliées aux comptes pros (dep:95)'])
@@ -177,6 +237,11 @@ if TerrG=='95':
     s1 = pd.merge(s['datePresentation'],s1, how='left', left_index=True, right_index=True)
 
     figSearch = px.line(s1,x='datePresentation', y=s1.columns.values.tolist()[1:])                                               
+
+    s1_cum = s1[['datePresentation','Recherches dep(95)']]
+    s1_cum['Recherches dep(95) cumulé'] = s1_cum['Recherches dep(95)'].cumsum()
+
+    fig4Bar = px.bar(s1_cum, x="datePresentation",y=['Recherches dep(95) cumulé'])    
 
 fig1.update_xaxes(title_text="Date de création (de la fiche ou du compte pro de la fiche) ou date de la dernière mise à jour de la fiche", title_standoff=0.6, title_font_family="Times New Roman")
 fig1.update_yaxes(title_text="Nombre de fiches (non cumulé)", title_font_family="Times New Roman")
@@ -223,6 +288,27 @@ figSearch.update_traces( mode='lines+markers', hovertemplate=None)
 figSearch.update_layout(xaxis=dict(tickformat="%B %Y"))
 figSearch.update_layout(hovermode="x", title_font_family="Times New Roman", annotations=[annotationsSearch])
 
+fig4Bar.update_xaxes(title_text="Date des recherches", title_standoff=0.6, title_font_family="Times New Roman")
+fig4Bar.update_yaxes(title_text="Nombre de recherches cumulé", title_font_family="Times New Roman")
+
+titleCompte = {
+        'text': 'Figure 2 : Nombre de recherches sur Soliguide cumulé',
+        'y': 0.9,
+        'x': 0.5,
+        'xanchor': "center",
+        'yanchor': 'top'}
+annotationsSearch = dict(xref='paper', yref='paper', x=0.055, y=1,
+                             xanchor='center', yanchor='top',
+                             text='Fait le: ' + str("1 octobre 2021"),
+                             font=dict(family='Arial',
+                                       size=12,
+                                       color='rgb(150,150,150)'),
+                             showarrow=False)
+
+fig4Bar.update_layout(title=titleCompte, title_font_family="Times New Roman",
+                               annotations=[annotationsSearch], xaxis_tickformat = '%B %Y')
+fig4Bar.update_traces(hovertemplate='Mois: %{x}<br> Nbre de recherches: %{y}') 
+
 st.markdown('### Figure 1: Nombre de fiches crées par mois ')
 st.plotly_chart(fig1, use_container_width=True)
 
@@ -231,6 +317,9 @@ st.plotly_chart(figBar, use_container_width=True)
 
 st.markdown('### Figure 2: Evolution du nombre de recherches sur Soliguide')
 st.plotly_chart(figSearch, use_container_width=True)
+
+st.plotly_chart(fig4Bar, use_container_width=True)
+
 
 if TerrG=='06':
     st.write('Sélectionnez votre secteur :')
