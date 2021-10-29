@@ -14,6 +14,7 @@ st.set_page_config(page_title="Suivi des indicateurs de la base de données - Oc
 st.image('https://soliguide.fr/assets/images/logo.png',width=600)
 
 df = pd.read_csv("./data_csv/fiche_figure1.csv")
+df.rename(columns={"Unnamed: 0": "Date_de_création"})
 s = pd.read_csv("./data_csv/searchWithDatePresentation2.csv")
 compteProCum = pd.read_csv("./data_csv/orga_figure3.csv")
 df4 = pd.read_csv("data_csv/GAdata.csv")
@@ -24,8 +25,8 @@ HtmlFile = open("./data_csv/Indre_36.html", 'r', encoding='utf-8')
 # Define department
 TerritoireSoliguide = ['36']
 
-fig1 = px.line(df, x="Unnamed: 0", y=['Suivies (dep:36)', 'En brouillon (dep:36)','Reservées aux pros (dep:36)', 'Mise à jour (dep:36)','Fiches reliées aux comptes pros (dep:36)'])                                         
-figBar = px.bar(df, x="Unnamed: 0",y=['Suivies (dep:36) cumulé','En brouillon (dep:36) cumulé', 'Reservées aux pros (dep:36) cumulé','Mise à jour (dep:36) cumulé','Fiches reliées aux comptes pros (dep:36) cumulé'])
+fig1 = px.line(df, x="Date_de_création", y=['Suivies (dep:36)', 'En brouillon (dep:36)','Reservées aux pros (dep:36)', 'Mise à jour (dep:36)','Fiches reliées aux comptes pros (dep:36)'])                                         
+figBar = px.bar(df, x="Date_de_création",y=['Suivies (dep:36) cumulé','En brouillon (dep:36) cumulé', 'Reservées aux pros (dep:36) cumulé','Mise à jour (dep:36) cumulé','Fiches reliées aux comptes pros (dep:36) cumulé'])
 
 s1 = s.filter(regex='36')
 s1 = pd.merge(s['Unnamed: 0'],s1, how='left', left_index=True, right_index=True)
