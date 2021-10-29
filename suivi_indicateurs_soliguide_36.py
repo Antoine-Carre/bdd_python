@@ -21,9 +21,6 @@ df4 = pd.read_csv("data_csv/GAdata.csv")
 HtmlFile = open("./data_csv/Indre_36.html", 'r', encoding='utf-8')
 
 
-st.image('https://soliguide.fr/assets/images/logo.png',width=600)
-
-
 # Define department
 TerritoireSoliguide = ['36']
 
@@ -36,7 +33,7 @@ s1 = pd.merge(s['Unnamed: 0'],s1, how='left', left_index=True, right_index=True)
 figSearch = px.line(s1,x='Unnamed: 0', y=s1.columns.values.tolist()[1:])
 
     
-s1_cum = s1[['Unnamed: 0','Recherches (dep 36)']]
+s1_cum = s1[['Unnamed: 0','Recherches (dep36)']]
 s1_cum['Recherches dep(36) cumulé'] = s1_cum['Recherches (dep 36)'].cumsum()
 
 fig4Bar = px.bar(s1_cum, x="Unnamed: 0",y=['Recherches dep(36) cumulé'])
