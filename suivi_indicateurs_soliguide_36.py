@@ -15,12 +15,14 @@ st.image('https://soliguide.fr/assets/images/logo.png',width=600)
 
 df = pd.read_csv("./data_csv/fiche_figure1.csv")
 df.rename(columns={"Unnamed: 0": "Date_de_création"}, inplace=True)
-df = df[40:]
+df = df[39:]
 
 s = pd.read_csv("./data_csv/searchWithDatePresentation2.csv")
-s = s[22:]
+s = s[21:]
 
 compteProCum = pd.read_csv("./data_csv/orga_figure3.csv")
+compteProCum = s[6:]
+
 df4 = pd.read_csv("data_csv/GAdata.csv")
 
 HtmlFile = open("./data_csv/Indre_36.html", 'r', encoding='utf-8')
