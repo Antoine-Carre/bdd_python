@@ -128,9 +128,9 @@ cumul = ['Vue mensuelle', 'Vue cumulée']
 cumul = st.selectbox('', cumul)
 
 if cumul=='Vue mensuelle':
-    figComptePro = px.bar(compteProCum, x='datePresentation', y='Vue mensuelle')
+    figComptePro = px.bar(compteProCum, x='datePresentation', y='36')
 if cumul=='Vue cumulée':
-    figComptePro = px.bar(compteProCum, x='datePresentation', y='Vue cumulée')
+    figComptePro = px.bar(compteProCum, x='datePresentation', y='36 cumulé')
     
 fig4 = px.line(df4[df4['territoire']=='Département 36'], x='Unnamed: 0', y=['Utilisateurs','Sessions','Pages vues'])
 
