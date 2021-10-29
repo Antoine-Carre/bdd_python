@@ -25,7 +25,7 @@ compteProCum = compteProCum[5:]
 
 df4 = pd.read_csv("data_csv/GAdata.csv")
 
-HtmlFile = open("./data_csv/Indre_36.html", 'r', encoding='utf-8')
+HtmlFile = open("./data_csv/map.html", 'r', encoding='utf-8')
 
 
 # Define department
