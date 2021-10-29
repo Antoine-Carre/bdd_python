@@ -29,15 +29,15 @@ fig1 = px.line(df, x="Date_de_création", y=['Suivies (dep:36)', 'En brouillon (
 figBar = px.bar(df, x="Date_de_création",y=['Suivies (dep:36) cumulé','En brouillon (dep:36) cumulé', 'Reservées aux pros (dep:36) cumulé','Mise à jour (dep:36) cumulé','Fiches reliées aux comptes pros (dep:36) cumulé'])
 
 s1 = s.filter(regex='36')
-s1 = pd.merge(s['Unnamed: 0'],s1, how='left', left_index=True, right_index=True)
+s1 = pd.merge(s['datePresentation'],s1, how='left', left_index=True, right_index=True)
 
-figSearch = px.line(s1,x='Unnamed: 0', y=s1.columns.values.tolist()[1:])
+figSearch = px.line(s1,x='datePresentation', y=s1.columns.values.tolist()[1:])
 
     
-s1_cum = s1[['Unnamed: 0','Recherches dep(36)']]
+s1_cum = s1[['datePresentation','Recherches dep(36)']]
 s1_cum['Recherches dep(36) cumulé'] = s1_cum['Recherches dep(36)'].cumsum()
 
-fig4Bar = px.bar(s1_cum, x="Unnamed: 0",y=['Recherches dep(36) cumulé'])
+fig4Bar = px.bar(s1_cum, x="datePresentation",y=['Recherches dep(36) cumulé'])
 
 fig1.update_xaxes(title_text="Date de création (de la fiche ou du compte pro de la fiche) ou date de la dernière mise à jour de la fiche", title_standoff=0.6, title_font_family="Times New Roman")
 fig1.update_yaxes(title_text="Nombre de fiches (non cumulé)", title_font_family="Times New Roman")
