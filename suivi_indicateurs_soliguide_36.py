@@ -33,8 +33,8 @@ s1 = pd.merge(s['Unnamed: 0'],s1, how='left', left_index=True, right_index=True)
 figSearch = px.line(s1,x='Unnamed: 0', y=s1.columns.values.tolist()[1:])
 
     
-s1_cum = s1[['Unnamed: 0','Recherches (dep36)']]
-s1_cum['Recherches dep(36) cumulé'] = s1_cum['Recherches (dep 36)'].cumsum()
+s1_cum = s1[['Unnamed: 0','Recherches dep(36)']]
+s1_cum['Recherches dep(36) cumulé'] = s1_cum['Recherches dep(36)'].cumsum()
 
 fig4Bar = px.bar(s1_cum, x="Unnamed: 0",y=['Recherches dep(36) cumulé'])
 
