@@ -21,7 +21,7 @@ s = pd.read_csv("./data_csv/searchWithDatePresentation2.csv")
 s = s[21:]
 
 compteProCum = pd.read_csv("./data_csv/orga_figure3.csv")
-compteProCum = s[6:]
+compteProCum = compteProCum[6:]
 
 df4 = pd.read_csv("data_csv/GAdata.csv")
 
