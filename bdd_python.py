@@ -22,9 +22,12 @@ s = pd.read_csv("./data_csv/searchWithDatePresentation2.csv")
 compteProCum = pd.read_csv("./data_csv/orga_figure3.csv")
 df4 = pd.read_csv("data_csv/GAdata.csv")
 
+df_history_data_grp = pd.read_csv("./data_csv/mise_a_jour.csv")
+df_history_data_grp.rename(columns={'status_ADMIN_SOLIGUIDE':'Equipe Solinum',
+                                   'status_ADMIN_TERRITORY':'Equipe territoriale',
+                                   'status_PRO':'Les acteurs'}, inplace=True)
+
 HtmlFile = open("./data_csv/map.html", 'r', encoding='utf-8')
-
-
 
 # Define department
 TerritoireSoliguide = ['06', '33', '44', '67', '75','77', '78','91', '92', '93', '94', '95']
@@ -51,6 +54,10 @@ if TerrG=='général':
         
     figComptePro = px.bar(compteProCum, x='datePresentation', y='Général cumulé')
 
+    fig6 = px.bar(df_history_data_grp.groupby(['monthly'], as_index=False).agg({'Equipe Solinum':'sum',
+                                                          'Equipe territoriale':'sum','Les acteurs':'sum'}),
+             x="monthly", y=["Equipe Solinum","Equipe territoriale","Les acteurs"], custom_data=['variable'], color_discrete_sequence= [ '#7201a8', '#bd3786', '#2896A0']) 
+
 
 if TerrG=='06':
     fig1 = px.line(df, x="Unnamed: 0", y=['Suivies (dep:06)','En ligne (dep:06)', 'En brouillon (dep:06)','Mise à jour (dep:06)', 
@@ -67,7 +74,12 @@ if TerrG=='06':
     s1_cum['Recherches dep(06) cumulé'] = s1_cum['Recherches dep(06)'].cumsum()
 
     fig4Bar = px.bar(s1_cum, x="datePresentation",y=['Recherches dep(06) cumulé'])
-    
+
+    fig6 = px.bar(df_history_data_grp[df_history_data_grp.departement == 'Alpes-Maritimes'].groupby(['monthly'], as_index=False).agg({'Equipe Solinum':'sum',
+                                                          'Equipe territoriale':'sum','Les acteurs':'sum'}),
+             x="monthly", y=["Equipe Solinum","Equipe territoriale","Les acteurs"], custom_data=['variable'], color_discrete_sequence= [ '#7201a8', '#bd3786', '#2896A0']) 
+
+
 if TerrG=='33':
     fig1 = px.line(df, x="Unnamed: 0", y=['Suivies (dep:33)','En ligne (dep:33)', 'En brouillon (dep:33)','Mise à jour (dep:33)', 
                                                     'Fiches reliées aux comptes pros (dep:33)'])
@@ -83,7 +95,11 @@ if TerrG=='33':
     s1_cum['Recherches dep(33) cumulé'] = s1_cum['Recherches dep(33)'].cumsum()
 
     fig4Bar = px.bar(s1_cum, x="datePresentation",y=['Recherches dep(33) cumulé'])
-    
+
+    fig6 = px.bar(df_history_data_grp[df_history_data_grp.departement == 'Gironde'].groupby(['monthly'], as_index=False).agg({'Equipe Solinum':'sum',
+                                                          'Equipe territoriale':'sum','Les acteurs':'sum'}),
+             x="monthly", y=["Equipe Solinum","Equipe territoriale","Les acteurs"], custom_data=['variable'], color_discrete_sequence= [ '#7201a8', '#bd3786', '#2896A0']) 
+
 if TerrG=='44':
     fig1 = px.line(df, x="Unnamed: 0", y=['Suivies (dep:44)','En ligne (dep:44)', 'En brouillon (dep:44)','Mise à jour (dep:44)', 
                                                     'Fiches reliées aux comptes pros (dep:44)'])
@@ -99,7 +115,11 @@ if TerrG=='44':
     s1_cum['Recherches dep(44) cumulé'] = s1_cum['Recherches dep(44)'].cumsum()
 
     fig4Bar = px.bar(s1_cum, x="datePresentation",y=['Recherches dep(44) cumulé'])
-    
+
+    fig6 = px.bar(df_history_data_grp[df_history_data_grp.departement == 'Loire-Atlantiques'].groupby(['monthly'], as_index=False).agg({'Equipe Solinum':'sum',
+                                                          'Equipe territoriale':'sum','Les acteurs':'sum'}),
+             x="monthly", y=["Equipe Solinum","Equipe territoriale","Les acteurs"], custom_data=['variable'], color_discrete_sequence= [ '#7201a8', '#bd3786', '#2896A0']) 
+
 if TerrG=='67':
     fig1 = px.line(df, x="Unnamed: 0", y=['Suivies (dep:67)','En ligne (dep:67)', 'En brouillon (dep:67)','Mise à jour (dep:67)', 
                                                     'Fiches reliées aux comptes pros (dep:67)'])         
@@ -115,7 +135,11 @@ if TerrG=='67':
     s1_cum['Recherches dep(67) cumulé'] = s1_cum['Recherches dep(67)'].cumsum()
 
     fig4Bar = px.bar(s1_cum, x="datePresentation",y=['Recherches dep(67) cumulé'])
-    
+
+    fig6 = px.bar(df_history_data_grp[df_history_data_grp.departement == 'Bas-Rhin'].groupby(['monthly'], as_index=False).agg({'Equipe Solinum':'sum',
+                                                          'Equipe territoriale':'sum','Les acteurs':'sum'}),
+             x="monthly", y=["Equipe Solinum","Equipe territoriale","Les acteurs"], custom_data=['variable'], color_discrete_sequence= [ '#7201a8', '#bd3786', '#2896A0']) 
+
 if TerrG=='75':
     fig1 = px.line(df, x="Unnamed: 0", y=['Suivies (dep:75)','En ligne (dep:75)', 'En brouillon (dep:75)','Mise à jour (dep:75)', 
                                                     'Fiches reliées aux comptes pros (dep:75)'])
@@ -131,7 +155,11 @@ if TerrG=='75':
     s1_cum['Recherches dep(75) cumulé'] = s1_cum['Recherches dep(75)'].cumsum()
 
     fig4Bar = px.bar(s1_cum, x="datePresentation",y=['Recherches dep(75) cumulé'])
-    
+
+    fig6 = px.bar(df_history_data_grp[df_history_data_grp.departement == 'Paris'].groupby(['monthly'], as_index=False).agg({'Equipe Solinum':'sum',
+                                                          'Equipe territoriale':'sum','Les acteurs':'sum'}),
+             x="monthly", y=["Equipe Solinum","Equipe territoriale","Les acteurs"], custom_data=['variable'], color_discrete_sequence= [ '#7201a8', '#bd3786', '#2896A0']) 
+
 if TerrG=='77':
     fig1 = px.line(df, x="Unnamed: 0", y=['Suivies (dep:77)','En ligne (dep:77)', 'En brouillon (dep:77)','Mise à jour (dep:77)', 
                                                     'Fiches reliées aux comptes pros (dep:77)'])
@@ -147,6 +175,10 @@ if TerrG=='77':
     s1_cum['Recherches dep(77) cumulé'] = s1_cum['Recherches dep(77)'].cumsum()
 
     fig4Bar = px.bar(s1_cum, x="datePresentation",y=['Recherches dep(77) cumulé'])
+
+    fig6 = px.bar(df_history_data_grp[df_history_data_grp.departement == 'Seine-et-Marne'].groupby(['monthly'], as_index=False).agg({'Equipe Solinum':'sum',
+                                                          'Equipe territoriale':'sum','Les acteurs':'sum'}),
+             x="monthly", y=["Equipe Solinum","Equipe territoriale","Les acteurs"], custom_data=['variable'], color_discrete_sequence= [ '#7201a8', '#bd3786', '#2896A0']) 
     
 if TerrG=='78':
     fig1 = px.line(df, x="Unnamed: 0", y=['Suivies (dep:78)','En ligne (dep:78)', 'En brouillon (dep:78)','Mise à jour (dep:78)', 
@@ -164,6 +196,10 @@ if TerrG=='78':
 
     fig4Bar = px.bar(s1_cum, x="datePresentation",y=['Recherches dep(78) cumulé'])    
 
+    fig6 = px.bar(df_history_data_grp[df_history_data_grp.departement == 'Yvelines'].groupby(['monthly'], as_index=False).agg({'Equipe Solinum':'sum',
+                                                          'Equipe territoriale':'sum','Les acteurs':'sum'}),
+             x="monthly", y=["Equipe Solinum","Equipe territoriale","Les acteurs"], custom_data=['variable'], color_discrete_sequence= [ '#7201a8', '#bd3786', '#2896A0']) 
+    
 if TerrG=='91':
     fig1 = px.line(df, x="Unnamed: 0", y=['Suivies (dep:91)','En ligne (dep:91)', 'En brouillon (dep:91)','Mise à jour (dep:91)', 
                                                     'Fiches reliées aux comptes pros (dep:91)'])
@@ -180,6 +216,10 @@ if TerrG=='91':
 
     fig4Bar = px.bar(s1_cum, x="datePresentation",y=['Recherches dep(91) cumulé'])    
 
+    fig6 = px.bar(df_history_data_grp[df_history_data_grp.departement == 'Essonne'].groupby(['monthly'], as_index=False).agg({'Equipe Solinum':'sum',
+                                                          'Equipe territoriale':'sum','Les acteurs':'sum'}),
+             x="monthly", y=["Equipe Solinum","Equipe territoriale","Les acteurs"], custom_data=['variable'], color_discrete_sequence= [ '#7201a8', '#bd3786', '#2896A0']) 
+    
 if TerrG=='92':
     fig1 = px.line(df, x="Unnamed: 0", y=['Suivies (dep:92)','En ligne (dep:92)', 'En brouillon (dep:92)','Mise à jour (dep:92)', 
                                                     'Fiches reliées aux comptes pros (dep:92)'])
@@ -196,6 +236,10 @@ if TerrG=='92':
 
     fig4Bar = px.bar(s1_cum, x="datePresentation",y=['Recherches dep(92) cumulé'])    
 
+    fig6 = px.bar(df_history_data_grp[df_history_data_grp.departement == 'Hauts-de-Seine'].groupby(['monthly'], as_index=False).agg({'Equipe Solinum':'sum',
+                                                          'Equipe territoriale':'sum','Les acteurs':'sum'}),
+             x="monthly", y=["Equipe Solinum","Equipe territoriale","Les acteurs"], custom_data=['variable'], color_discrete_sequence= [ '#7201a8', '#bd3786', '#2896A0']) 
+    
 if TerrG=='93':
     fig1 = px.line(df, x="Unnamed: 0", y=['Suivies (dep:93)','En ligne (dep:93)', 'En brouillon (dep:93)','Mise à jour (dep:93)', 
                                                     'Fiches reliées aux comptes pros (dep:93)'])
@@ -212,6 +256,10 @@ if TerrG=='93':
 
     fig4Bar = px.bar(s1_cum, x="datePresentation",y=['Recherches dep(93) cumulé'])    
 
+    fig6 = px.bar(df_history_data_grp[df_history_data_grp.departement == 'Seine-Saint-Denis'].groupby(['monthly'], as_index=False).agg({'Equipe Solinum':'sum',
+                                                          'Equipe territoriale':'sum','Les acteurs':'sum'}),
+             x="monthly", y=["Equipe Solinum","Equipe territoriale","Les acteurs"], custom_data=['variable'], color_discrete_sequence= [ '#7201a8', '#bd3786', '#2896A0']) 
+    
 if TerrG=='94':
     fig1 = px.line(df, x="Unnamed: 0", y=['Suivies (dep:94)','En ligne (dep:94)', 'En brouillon (dep:94)','Mise à jour (dep:94)', 
                                                     'Fiches reliées aux comptes pros (dep:94)'])    
@@ -228,6 +276,10 @@ if TerrG=='94':
 
     fig4Bar = px.bar(s1_cum, x="datePresentation",y=['Recherches dep(94) cumulé'])    
 
+    fig6 = px.bar(df_history_data_grp[df_history_data_grp.departement == 'Val-de-Marne'].groupby(['monthly'], as_index=False).agg({'Equipe Solinum':'sum',
+                                                          'Equipe territoriale':'sum','Les acteurs':'sum'}),
+             x="monthly", y=["Equipe Solinum","Equipe territoriale","Les acteurs"], custom_data=['variable'], color_discrete_sequence= [ '#7201a8', '#bd3786', '#2896A0']) 
+    
 if TerrG=='95':
     fig1 = px.line(df, x="Unnamed: 0", y=['Suivies (dep:95)','En ligne (dep:95)', 'En brouillon (dep:95)','Mise à jour (dep:95)', 
                                                     'Fiches reliées aux comptes pros (dep:95)'])
@@ -243,6 +295,10 @@ if TerrG=='95':
 
     fig4Bar = px.bar(s1_cum, x="datePresentation",y=['Recherches dep(95) cumulé'])    
 
+    fig6 = px.bar(df_history_data_grp[df_history_data_grp.departement == 'Val-d\'Oise'].groupby(['monthly'], as_index=False).agg({'Equipe Solinum':'sum',
+                                                          'Equipe territoriale':'sum','Les acteurs':'sum'}),
+             x="monthly", y=["Equipe Solinum","Equipe territoriale","Les acteurs"], custom_data=['variable'], color_discrete_sequence= [ '#7201a8', '#bd3786', '#2896A0']) 
+    
 fig1.update_xaxes(title_text="Date de création (de la fiche ou du compte pro de la fiche) ou date de la dernière mise à jour de la fiche", title_standoff=0.6, title_font_family="Times New Roman")
 fig1.update_yaxes(title_text="Nombre de fiches (non cumulé)", title_font_family="Times New Roman")
 
@@ -260,6 +316,7 @@ fig1.update_layout(hovermode="x unified", title_font_family="Times New Roman", a
 
 figBar.update_xaxes(title_text="Date de création (de la fiche ou du compte pro de la fiche) ou date de la dernière mise à jour de la fiche", title_standoff=0.6, title_font_family="Times New Roman")
 figBar.update_yaxes(title_text="Nombre de fiches (non cumulé)", title_font_family="Times New Roman")
+
 
 
 annotations = dict(xref='paper', yref='paper', x=0.055, y=1,
@@ -514,5 +571,9 @@ source_code = HtmlFile.read()
 components.html(source_code, height = 600)
 
 
+fig6.update_traces(hovertemplate='<br>Nombre de mises à jour :%{y}') 
+fig6.update_layout(xaxis_tickformat = '%B %Y')
+fig6.update_layout(hovermode="x unified")
 
-
+st.markdown('### Figure 6 : Evolution des mises à jours autonomes')
+st.plotly_chart(fig6, use_container_width=True)
