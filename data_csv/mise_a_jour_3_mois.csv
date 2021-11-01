@@ -1,0 +1,26 @@
+departement_x,status,lieu_id,pourcentage
+,0,2,0.0
+Alpes-Maritimes,201,397,50.63
+Ardennes,1,1,100.0
+Bas-Rhin,93,253,36.76
+Bouches-du-Rhône,44,44,100.0
+Cantal,2,2,100.0
+Charente,0,1,0.0
+Dordogne,0,3,0.0
+Essonne,60,194,30.93
+Gironde,92,694,13.26
+Hauts-de-Seine,75,800,9.38
+Indre,3,3,100.0
+Loire-Atlantique,59,706,8.36
+Nord,2,2,100.0
+Paris,181,1450,12.48
+Puy-de-Dôme,2,2,100.0
+Pyrénées-Orientales,0,1,0.0
+Rhône,0,1,0.0
+Seine-Saint-Denis,137,849,16.14
+Seine-et-Marne,103,188,54.79
+Territoire de Belfort,0,1,0.0
+Val-d'Oise,84,358,23.46
+Val-de-Marne,178,794,22.42
+Yvelines,377,881,42.79
+Total,1694,7627,22.21
