@@ -422,11 +422,12 @@ if TerrG=='95':
              x="monthly", y=["Equipe Solinum","Equipe territoriale","Les acteurs"], custom_data=['variable'], color_discrete_sequence= [ '#7201a8', '#bd3786', '#2896A0']) 
 
     html_string_1 = f"""<br>
-    <center><font face='Helvetica' size='6'>{df_maj_3_months.loc['Val-d\'Oise','pourcentage']} %</font>
-    <br><font size='3'>des fiches ont été mise à jours au moins une fois pendant les 3 derniers mois<br></font></center>"""
+    <center><font face='Helvetica' size='6'>{df_maj_3_months.loc["Val-d'Oise",'pourcentage']} %</font>
+    <br/><font size='3'>des fiches ont été mise à jours au moins une fois pendant les 3 derniers mois<br></font></center>
+    """
 
     html_string_2 = f"""<br>
-    <center><font face='Helvetica' size='6'>{df_maj_6_months.loc['Val-d\'Oise','pourcentage']} %</font>
+    <center><font face='Helvetica' size='6'>{df_maj_6_months.loc["Val-d'Oise",'pourcentage']} %</font>
     <br/><font size='3'>des fiches ont été mise à jours au moins une fois pendant les 6 derniers mois<br></font></center>
     """
                     
