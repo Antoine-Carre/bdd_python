@@ -7,7 +7,7 @@ from datetime import date
 import streamlit.components.v1 as components
 
 # option
-st.set_page_config(page_title="Base de données - Septembre 2021",
+st.set_page_config(page_title="Base de données - Octobre 2021",
                    page_icon="🚀",
                    layout="wide",)
 
