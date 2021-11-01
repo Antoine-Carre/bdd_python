@@ -427,7 +427,7 @@ if TerrG=='95':
 
     html_string_2 = f"""<br>
     <center><font face='Helvetica' size='6'>{df_maj_6_months.loc['Val-d\'Oise','pourcentage']} %</font>
-    <br/><font size='3'>des fiches ont été mise à jours au moins une fois pendant les 6 derniers mois<br></font></center>"
+    <br/><font size='3'>des fiches ont été mise à jours au moins une fois pendant les 6 derniers mois<br></font></center>
     """
                     
 fig1.update_xaxes(title_text="Date de création (de la fiche ou du compte pro de la fiche) ou date de la dernière mise à jour de la fiche", title_standoff=0.6, title_font_family="Times New Roman")
