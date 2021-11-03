@@ -35,7 +35,7 @@ df_maj_6_months.set_index('departement_x', inplace=True)
 HtmlFile = open("./data_csv/map.html", 'r', encoding='utf-8')
 
 # Define department
-TerritoireSoliguide = ['06', '33', '44', '67', '75','77', '78','91', '92', '93', '94', '95']
+TerritoireSoliguide = ['06', '07','13','15','16','21', '33','34','35','36', '44','59','63', '67', '75','76','77', '78','91', '92', '93', '94', '95']
 TerrG = ["général"] + TerritoireSoliguide
 
 st.write('Sélectionnez votre secteur :')
@@ -102,6 +102,154 @@ if TerrG=='06':
     <center><font face='Helvetica' size='6'>{df_maj_6_months.loc['Alpes-Maritimes','pourcentage']} %</font>
     <br/><font size='3'>des fiches ont été mise à jours au moins une fois pendant les 6 derniers mois<br></font></center>"
     """
+    
+if TerrG=='07':
+    fig1 = px.line(df, x="Unnamed: 0", y=['Suivies (dep:07)','En brouillon (dep:07)','Mise à jour (dep:07)'])                                         
+    figBar = px.bar(df, x="Unnamed: 0",y=['Suivies (dep:07) cumulé', 'En brouillon (dep:07) cumulé', 
+                                            'Mise à jour (dep:07) cumulé'])
+
+    s1 = s.filter(regex='07')
+    s1 = pd.merge(s['datePresentation'],s1, how='left', left_index=True, right_index=True)
+
+    figSearch = px.line(s1,x='datePresentation', y=s1.columns.values.tolist()[1:])
+    
+    s1_cum = s1[['datePresentation','Recherches dep(07)']]
+    s1_cum['Recherches dep(07) cumulé'] = s1_cum['Recherches dep(07)'].cumsum()
+
+    fig4Bar = px.bar(s1_cum, x="datePresentation",y=['Recherches dep(07) cumulé'])
+
+    fig6 = px.bar(df_history_data_grp[df_history_data_grp.departement == 'Ardèche'].groupby(['monthly'], as_index=False).agg({'Equipe Solinum':'sum',
+                                                          'Equipe territoriale':'sum','Les acteurs':'sum'}),
+             x="monthly", y=["Equipe Solinum","Equipe territoriale","Les acteurs"], custom_data=['variable'], color_discrete_sequence= [ '#7201a8', '#bd3786', '#2896A0']) 
+
+    #html_string_1 = f"""<br>
+    #<center><font face='Helvetica' size='6'>{df_maj_3_months.loc['Ardèche','pourcentage']} %</font>
+    #<br/><font size='3'>des fiches ont été mise à jours au moins une fois pendant les 3 derniers mois<br></font></center>"
+    #"""
+
+    #html_string_2 = f"""<br>
+    #<center><font face='Helvetica' size='6'>{df_maj_6_months.loc['Ardèche','pourcentage']} %</font>
+    #<br/><font size='3'>des fiches ont été mise à jours au moins une fois pendant les 6 derniers mois<br></font></center>"
+    #"""
+
+if TerrG=='13':
+    fig1 = px.line(df, x="Unnamed: 0", y=['Suivies (dep:13)','En ligne (dep:13)', 'En brouillon (dep:13)','Mise à jour (dep:13)', 
+                                                    'Fiches reliées aux comptes pros (dep:13)'])                                         
+    figBar = px.bar(df, x="Unnamed: 0",y=['Suivies (dep:13) cumulé', 'En ligne (dep:13) cumulé', 'En brouillon (dep:13) cumulé', 
+                                            'Mise à jour (dep:13) cumulé',  'Fiches reliées aux comptes pros (dep:13) cumulé'])
+
+    s1 = s.filter(regex='13')
+    s1 = pd.merge(s['datePresentation'],s1, how='left', left_index=True, right_index=True)
+
+    figSearch = px.line(s1,x='datePresentation', y=s1.columns.values.tolist()[1:])
+    
+    s1_cum = s1[['datePresentation','Recherches dep(13)']]
+    s1_cum['Recherches dep(13) cumulé'] = s1_cum['Recherches dep(13)'].cumsum()
+
+    fig4Bar = px.bar(s1_cum, x="datePresentation",y=['Recherches dep(13) cumulé'])
+
+    fig6 = px.bar(df_history_data_grp[df_history_data_grp.departement == 'Bouches-du-Rhône'].groupby(['monthly'], as_index=False).agg({'Equipe Solinum':'sum',
+                                                          'Equipe territoriale':'sum','Les acteurs':'sum'}),
+             x="monthly", y=["Equipe Solinum","Equipe territoriale","Les acteurs"], custom_data=['variable'], color_discrete_sequence= [ '#7201a8', '#bd3786', '#2896A0']) 
+
+    html_string_1 = f"""<br>
+    <center><font face='Helvetica' size='6'>{df_maj_3_months.loc['Bouches-du-Rhône','pourcentage']} %</font>
+    <br/><font size='3'>des fiches ont été mise à jours au moins une fois pendant les 3 derniers mois<br></font></center>"
+    """
+
+    html_string_2 = f"""<br>
+    <center><font face='Helvetica' size='6'>{df_maj_6_months.loc['Bouches-du-Rhône','pourcentage']} %</font>
+    <br/><font size='3'>des fiches ont été mise à jours au moins une fois pendant les 6 derniers mois<br></font></center>"
+    """
+
+if TerrG=='15':
+    fig1 = px.line(df, x="Unnamed: 0", y=['Suivies (dep:15)','En ligne (dep:15)', 'En brouillon (dep:15)','Mise à jour (dep:15)', 
+                                                    'Fiches reliées aux comptes pros (dep:15)'])                                         
+    figBar = px.bar(df, x="Unnamed: 0",y=['Suivies (dep:15) cumulé', 'En ligne (dep:15) cumulé', 'En brouillon (dep:15) cumulé', 
+                                            'Mise à jour (dep:15) cumulé',  'Fiches reliées aux comptes pros (dep:15) cumulé'])
+
+    s1 = s.filter(regex='15')
+    s1 = pd.merge(s['datePresentation'],s1, how='left', left_index=True, right_index=True)
+
+    figSearch = px.line(s1,x='datePresentation', y=s1.columns.values.tolist()[1:])
+    
+    s1_cum = s1[['datePresentation','Recherches dep(15)']]
+    s1_cum['Recherches dep(15) cumulé'] = s1_cum['Recherches dep(15)'].cumsum()
+
+    fig4Bar = px.bar(s1_cum, x="datePresentation",y=['Recherches dep(15) cumulé'])
+
+    fig6 = px.bar(df_history_data_grp[df_history_data_grp.departement == 'Cantal'].groupby(['monthly'], as_index=False).agg({'Equipe Solinum':'sum',
+                                                          'Equipe territoriale':'sum','Les acteurs':'sum'}),
+             x="monthly", y=["Equipe Solinum","Equipe territoriale","Les acteurs"], custom_data=['variable'], color_discrete_sequence= [ '#7201a8', '#bd3786', '#2896A0']) 
+
+    html_string_1 = f"""<br>
+    <center><font face='Helvetica' size='6'>{df_maj_3_months.loc['Cantal','pourcentage']} %</font>
+    <br/><font size='3'>des fiches ont été mise à jours au moins une fois pendant les 3 derniers mois<br></font></center>"
+    """
+
+    html_string_2 = f"""<br>
+    <center><font face='Helvetica' size='6'>{df_maj_6_months.loc['Cantal','pourcentage']} %</font>
+    <br/><font size='3'>des fiches ont été mise à jours au moins une fois pendant les 6 derniers mois<br></font></center>"
+    """
+
+if TerrG=='16':
+    fig1 = px.line(df, x="Unnamed: 0", y=['Suivies (dep:16)','En ligne (dep:16)', 'En brouillon (dep:16)','Mise à jour (dep:16)', 
+                                                    'Fiches reliées aux comptes pros (dep:16)'])                                         
+    figBar = px.bar(df, x="Unnamed: 0",y=['Suivies (dep:16) cumulé', 'En ligne (dep:16) cumulé', 'En brouillon (dep:16) cumulé', 
+                                            'Mise à jour (dep:16) cumulé',  'Fiches reliées aux comptes pros (dep:16) cumulé'])
+
+    s1 = s.filter(regex='16')
+    s1 = pd.merge(s['datePresentation'],s1, how='left', left_index=True, right_index=True)
+
+    figSearch = px.line(s1,x='datePresentation', y=s1.columns.values.tolist()[1:])
+    
+    s1_cum = s1[['datePresentation','Recherches dep(16)']]
+    s1_cum['Recherches dep(16) cumulé'] = s1_cum['Recherches dep(16)'].cumsum()
+
+    fig4Bar = px.bar(s1_cum, x="datePresentation",y=['Recherches dep(16) cumulé'])
+
+    fig6 = px.bar(df_history_data_grp[df_history_data_grp.departement == 'Charente'].groupby(['monthly'], as_index=False).agg({'Equipe Solinum':'sum',
+                                                          'Equipe territoriale':'sum','Les acteurs':'sum'}),
+             x="monthly", y=["Equipe Solinum","Equipe territoriale","Les acteurs"], custom_data=['variable'], color_discrete_sequence= [ '#7201a8', '#bd3786', '#2896A0']) 
+
+    html_string_1 = f"""<br>
+    <center><font face='Helvetica' size='6'>{df_maj_3_months.loc['Charente','pourcentage']} %</font>
+    <br/><font size='3'>des fiches ont été mise à jours au moins une fois pendant les 3 derniers mois<br></font></center>"
+    """
+
+    html_string_2 = f"""<br>
+    <center><font face='Helvetica' size='6'>{df_maj_6_months.loc['Charente','pourcentage']} %</font>
+    <br/><font size='3'>des fiches ont été mise à jours au moins une fois pendant les 6 derniers mois<br></font></center>"
+    """
+
+if TerrG=='21':
+    fig1 = px.line(df, x="Unnamed: 0", y=['Suivies (dep:21)', 'En brouillon (dep:21)','Mise à jour (dep:21)'])                                         
+    figBar = px.bar(df, x="Unnamed: 0",y=['Suivies (dep:21) cumulé', 'En brouillon (dep:21) cumulé', 
+                                            'Mise à jour (dep:21) cumulé'])
+
+    s1 = s.filter(regex='21')
+    s1 = pd.merge(s['datePresentation'],s1, how='left', left_index=True, right_index=True)
+
+    figSearch = px.line(s1,x='datePresentation', y=s1.columns.values.tolist()[1:])
+    
+    s1_cum = s1[['datePresentation','Recherches dep(21)']]
+    s1_cum['Recherches dep(21) cumulé'] = s1_cum['Recherches dep(21)'].cumsum()
+
+    fig4Bar = px.bar(s1_cum, x="datePresentation",y=['Recherches dep(21) cumulé'])
+
+    fig6 = px.bar(df_history_data_grp[df_history_data_grp.departement == 'Côte-d\'Or'].groupby(['monthly'], as_index=False).agg({'Equipe Solinum':'sum',
+                                                          'Equipe territoriale':'sum','Les acteurs':'sum'}),
+             x="monthly", y=["Equipe Solinum","Equipe territoriale","Les acteurs"], custom_data=['variable'], color_discrete_sequence= [ '#7201a8', '#bd3786', '#2896A0']) 
+
+    #html_string_1 = f"""<br>
+    #<center><font face='Helvetica' size='6'>{df_maj_3_months.loc["Côte-d'Or",'pourcentage']} %</font>
+    #<br/><font size='3'>des fiches ont été mise à jours au moins une fois pendant les 3 derniers mois<br></font></center>"
+    #"""
+
+    #html_string_2 = f"""<br>
+    #<center><font face='Helvetica' size='6'>{df_maj_6_months.loc["Côte-d'Or",'pourcentage']} %</font>
+    #<br/><font size='3'>des fiches ont été mise à jours au moins une fois pendant les 6 derniers mois<br></font></center>"
+    #"""
 
 if TerrG=='33':
     fig1 = px.line(df, x="Unnamed: 0", y=['Suivies (dep:33)','En ligne (dep:33)', 'En brouillon (dep:33)','Mise à jour (dep:33)', 
@@ -133,6 +281,92 @@ if TerrG=='33':
     <br/><font size='3'>des fiches ont été mise à jours au moins une fois pendant les 6 derniers mois<br></font></center>"
     """
 
+if TerrG=='34':
+    fig1 = px.line(df, x="Unnamed: 0", y=['Suivies (dep:34)', 'En brouillon (dep:34)','Mise à jour (dep:34)'])                                         
+    figBar = px.bar(df, x="Unnamed: 0",y=['Suivies (dep:34) cumulé', 'En brouillon (dep:34) cumulé', 'Mise à jour (dep:34) cumulé',])
+
+    s1 = s.filter(regex='34')
+    s1 = pd.merge(s['datePresentation'],s1, how='left', left_index=True, right_index=True)
+
+    figSearch = px.line(s1,x='datePresentation', y=s1.columns.values.tolist()[1:])
+    
+    s1_cum = s1[['datePresentation','Recherches dep(34)']]
+    s1_cum['Recherches dep(34) cumulé'] = s1_cum['Recherches dep(34)'].cumsum()
+
+    fig4Bar = px.bar(s1_cum, x="datePresentation",y=['Recherches dep(34) cumulé'])
+
+    fig6 = px.bar(df_history_data_grp[df_history_data_grp.departement == 'Hérault'].groupby(['monthly'], as_index=False).agg({'Equipe Solinum':'sum',
+                                                          'Equipe territoriale':'sum','Les acteurs':'sum'}),
+             x="monthly", y=["Equipe Solinum","Equipe territoriale","Les acteurs"], custom_data=['variable'], color_discrete_sequence= [ '#7201a8', '#bd3786', '#2896A0']) 
+
+    #html_string_1 = f"""<br>
+    #<center><font face='Helvetica' size='6'>{df_maj_3_months.loc['Hérault','pourcentage']} %</font>
+    #<br/><font size='3'>des fiches ont été mise à jours au moins une fois pendant les 3 derniers mois<br></font></center>"
+    #"""
+
+    #html_string_2 = f"""<br>
+    #<center><font face='Helvetica' size='6'>{df_maj_6_months.loc['Hérault','pourcentage']} %</font>
+    #<br/><font size='3'>des fiches ont été mise à jours au moins une fois pendant les 6 derniers mois<br></font></center>"
+    #"""
+
+if TerrG=='35':
+    fig1 = px.line(df, x="Unnamed: 0", y=['Suivies (dep:35)', 'En brouillon (dep:35)','Mise à jour (dep:35)'])                                         
+    figBar = px.bar(df, x="Unnamed: 0",y=['Suivies (dep:35) cumulé', 'En brouillon (dep:35) cumulé', 'Mise à jour (dep:35) cumulé'])
+
+    s1 = s.filter(regex='35')
+    s1 = pd.merge(s['datePresentation'],s1, how='left', left_index=True, right_index=True)
+
+    figSearch = px.line(s1,x='datePresentation', y=s1.columns.values.tolist()[1:])
+    
+    s1_cum = s1[['datePresentation','Recherches dep(35)']]
+    s1_cum['Recherches dep(35) cumulé'] = s1_cum['Recherches dep(35)'].cumsum()
+
+    fig4Bar = px.bar(s1_cum, x="datePresentation",y=['Recherches dep(35) cumulé'])
+
+    fig6 = px.bar(df_history_data_grp[df_history_data_grp.departement == 'Ille-et-Vilaine'].groupby(['monthly'], as_index=False).agg({'Equipe Solinum':'sum',
+                                                          'Equipe territoriale':'sum','Les acteurs':'sum'}),
+             x="monthly", y=["Equipe Solinum","Equipe territoriale","Les acteurs"], custom_data=['variable'], color_discrete_sequence= [ '#7201a8', '#bd3786', '#2896A0']) 
+
+    #html_string_1 = f"""<br>
+    #<center><font face='Helvetica' size='6'>{df_maj_3_months.loc['Ille-et-Vilaine','pourcentage']} %</font>
+    #<br/><font size='3'>des fiches ont été mise à jours au moins une fois pendant les 3 derniers mois<br></font></center>"
+    #"""
+
+    #html_string_2 = f"""<br>
+    #<center><font face='Helvetica' size='6'>{df_maj_6_months.loc['Ille-et-Vilaine','pourcentage']} %</font>
+    #<br/><font size='3'>des fiches ont été mise à jours au moins une fois pendant les 6 derniers mois<br></font></center>"
+    #"""
+
+if TerrG=='36':
+    fig1 = px.line(df, x="Unnamed: 0", y=['Suivies (dep:36)','En ligne (dep:36)', 'En brouillon (dep:36)','Mise à jour (dep:36)', 
+                                                    'Fiches reliées aux comptes pros (dep:36)'])
+    figBar = px.bar(df, x="Unnamed: 0",y=['Suivies (dep:36) cumulé', 'En ligne (dep:36) cumulé', 'En brouillon (dep:36) cumulé', 
+                                            'Mise à jour (dep:36) cumulé',  'Fiches reliées aux comptes pros (dep:36) cumulé'])    
+
+    s1 = s.filter(regex='36')
+    s1 = pd.merge(s['datePresentation'],s1, how='left', left_index=True, right_index=True)
+
+    figSearch = px.line(s1,x='datePresentation', y=s1.columns.values.tolist()[1:])                                            
+
+    s1_cum = s1[['datePresentation','Recherches dep(36)']]
+    s1_cum['Recherches dep(36) cumulé'] = s1_cum['Recherches dep(36)'].cumsum()
+
+    fig4Bar = px.bar(s1_cum, x="datePresentation",y=['Recherches dep(36) cumulé'])
+
+    fig6 = px.bar(df_history_data_grp[df_history_data_grp.departement == 'Indre'].groupby(['monthly'], as_index=False).agg({'Equipe Solinum':'sum',
+                                                          'Equipe territoriale':'sum','Les acteurs':'sum'}),
+             x="monthly", y=["Equipe Solinum","Equipe territoriale","Les acteurs"], custom_data=['variable'], color_discrete_sequence= [ '#7201a8', '#bd3786', '#2896A0']) 
+
+    html_string_1 = f"""<br>
+    <center><font face='Helvetica' size='6'>{df_maj_3_months.loc['Indre','pourcentage']} %</font>
+    <br/><font size='3'>des fiches ont été mise à jours au moins une fois pendant les 3 derniers mois<br></font></center>"
+    """
+
+    html_string_2 = f"""<br>
+    <center><font face='Helvetica' size='6'>{df_maj_6_months.loc['Indre','pourcentage']} %</font>
+    <br/><font size='3'>des fiches ont été mise à jours au moins une fois pendant les 6 derniers mois<br></font></center>"
+    """
+
 if TerrG=='44':
     fig1 = px.line(df, x="Unnamed: 0", y=['Suivies (dep:44)','En ligne (dep:44)', 'En brouillon (dep:44)','Mise à jour (dep:44)', 
                                                     'Fiches reliées aux comptes pros (dep:44)'])
@@ -160,6 +394,66 @@ if TerrG=='44':
 
     html_string_2 = f"""<br>
     <center><font face='Helvetica' size='6'>{df_maj_6_months.loc['Loire-Atlantique','pourcentage']} %</font>
+    <br/><font size='3'>des fiches ont été mise à jours au moins une fois pendant les 6 derniers mois<br></font></center>"
+    """
+
+if TerrG=='59':
+    fig1 = px.line(df, x="Unnamed: 0", y=['Suivies (dep:59)','En ligne (dep:59)', 'En brouillon (dep:59)','Mise à jour (dep:59)', 
+                                                    'Fiches reliées aux comptes pros (dep:59)'])
+    figBar = px.bar(df, x="Unnamed: 0",y=['Suivies (dep:59) cumulé', 'En ligne (dep:59) cumulé', 'En brouillon (dep:59) cumulé', 
+                                            'Mise à jour (dep:59) cumulé',  'Fiches reliées aux comptes pros (dep:59) cumulé'])    
+
+    s1 = s.filter(regex='59')
+    s1 = pd.merge(s['datePresentation'],s1, how='left', left_index=True, right_index=True)
+
+    figSearch = px.line(s1,x='datePresentation', y=s1.columns.values.tolist()[1:])                                            
+
+    s1_cum = s1[['datePresentation','Recherches dep(59)']]
+    s1_cum['Recherches dep(59) cumulé'] = s1_cum['Recherches dep(59)'].cumsum()
+
+    fig4Bar = px.bar(s1_cum, x="datePresentation",y=['Recherches dep(59) cumulé'])
+
+    fig6 = px.bar(df_history_data_grp[df_history_data_grp.departement == 'Nord'].groupby(['monthly'], as_index=False).agg({'Equipe Solinum':'sum',
+                                                          'Equipe territoriale':'sum','Les acteurs':'sum'}),
+             x="monthly", y=["Equipe Solinum","Equipe territoriale","Les acteurs"], custom_data=['variable'], color_discrete_sequence= [ '#7201a8', '#bd3786', '#2896A0']) 
+
+    html_string_1 = f"""<br>
+    <center><font face='Helvetica' size='6'>{df_maj_3_months.loc['Nord','pourcentage']} %</font>
+    <br/><font size='3'>des fiches ont été mise à jours au moins une fois pendant les 3 derniers mois<br></font></center>"
+    """
+
+    html_string_2 = f"""<br>
+    <center><font face='Helvetica' size='6'>{df_maj_6_months.loc['Nord','pourcentage']} %</font>
+    <br/><font size='3'>des fiches ont été mise à jours au moins une fois pendant les 6 derniers mois<br></font></center>"
+    """
+
+if TerrG=='63':
+    fig1 = px.line(df, x="Unnamed: 0", y=['Suivies (dep:63)','En ligne (dep:63)', 'En brouillon (dep:63)','Mise à jour (dep:63)', 
+                                                    'Fiches reliées aux comptes pros (dep:63)'])
+    figBar = px.bar(df, x="Unnamed: 0",y=['Suivies (dep:63) cumulé', 'En ligne (dep:63) cumulé', 'En brouillon (dep:63) cumulé', 
+                                            'Mise à jour (dep:63) cumulé',  'Fiches reliées aux comptes pros (dep:63) cumulé'])    
+
+    s1 = s.filter(regex='63')
+    s1 = pd.merge(s['datePresentation'],s1, how='left', left_index=True, right_index=True)
+
+    figSearch = px.line(s1,x='datePresentation', y=s1.columns.values.tolist()[1:])                                            
+
+    s1_cum = s1[['datePresentation','Recherches dep(63)']]
+    s1_cum['Recherches dep(63) cumulé'] = s1_cum['Recherches dep(63)'].cumsum()
+
+    fig4Bar = px.bar(s1_cum, x="datePresentation",y=['Recherches dep(63) cumulé'])
+
+    fig6 = px.bar(df_history_data_grp[df_history_data_grp.departement == 'Puy-de-Dôme'].groupby(['monthly'], as_index=False).agg({'Equipe Solinum':'sum',
+                                                          'Equipe territoriale':'sum','Les acteurs':'sum'}),
+             x="monthly", y=["Equipe Solinum","Equipe territoriale","Les acteurs"], custom_data=['variable'], color_discrete_sequence= [ '#7201a8', '#bd3786', '#2896A0']) 
+
+    html_string_1 = f"""<br>
+    <center><font face='Helvetica' size='6'>{df_maj_3_months.loc['Puy-de-Dôme','pourcentage']} %</font>
+    <br/><font size='3'>des fiches ont été mise à jours au moins une fois pendant les 3 derniers mois<br></font></center>"
+    """
+
+    html_string_2 = f"""<br>
+    <center><font face='Helvetica' size='6'>{df_maj_6_months.loc['Puy-de-Dôme','pourcentage']} %</font>
     <br/><font size='3'>des fiches ont été mise à jours au moins une fois pendant les 6 derniers mois<br></font></center>"
     """
 
@@ -222,6 +516,38 @@ if TerrG=='75':
     <center><font face='Helvetica' size='6'>{df_maj_6_months.loc['Paris','pourcentage']} %</font>
     <br/><font size='3'>des fiches ont été mise à jours au moins une fois pendant les 6 derniers mois<br></font></center>"
     """
+
+
+if TerrG=='76':
+    fig1 = px.line(df, x="Unnamed: 0", y=['Suivies (dep:76)','En brouillon (dep:76)','Mise à jour (dep:76)', 
+                                                    'Fiches reliées aux comptes pros (dep:76)'])
+    figBar = px.bar(df, x="Unnamed: 0",y=['Suivies (dep:76) cumulé', 'En brouillon (dep:76) cumulé', 
+                                            'Mise à jour (dep:76) cumulé',  'Fiches reliées aux comptes pros (dep:76) cumulé'])    
+
+    s1 = s.filter(regex='76')
+    s1 = pd.merge(s['datePresentation'],s1, how='left', left_index=True, right_index=True)
+
+    figSearch = px.line(s1,x='datePresentation', y=s1.columns.values.tolist()[1:])                                            
+
+    s1_cum = s1[['datePresentation','Recherches dep(76)']]
+    s1_cum['Recherches dep(76) cumulé'] = s1_cum['Recherches dep(76)'].cumsum()
+
+    fig4Bar = px.bar(s1_cum, x="datePresentation",y=['Recherches dep(76) cumulé'])
+
+    fig6 = px.bar(df_history_data_grp[df_history_data_grp.departement == 'Seine-Maritime'].groupby(['monthly'], as_index=False).agg({'Equipe Solinum':'sum',
+                                                          'Equipe territoriale':'sum','Les acteurs':'sum'}),
+             x="monthly", y=["Equipe Solinum","Equipe territoriale","Les acteurs"], custom_data=['variable'], color_discrete_sequence= [ '#7201a8', '#bd3786', '#2896A0']) 
+
+    #html_string_1 = f"""<br>
+    #<center><font face='Helvetica' size='6'>{df_maj_3_months.loc['Seine-Maritime','pourcentage']} %</font>
+    #<br/><font size='3'>des fiches ont été mise à jours au moins une fois pendant les 3 derniers mois<br></font></center>"
+    #"""
+
+    #html_string_2 = f"""<br>
+    #<center><font face='Helvetica' size='6'>{df_maj_6_months.loc['Seine-Maritime','pourcentage']} %</font>
+    #<br/><font size='3'>des fiches ont été mise à jours au moins une fois pendant les 6 derniers mois<br></font></center>"
+    #"""
+
 if TerrG=='77':
     fig1 = px.line(df, x="Unnamed: 0", y=['Suivies (dep:77)','En ligne (dep:77)', 'En brouillon (dep:77)','Mise à jour (dep:77)', 
                                                     'Fiches reliées aux comptes pros (dep:77)'])
@@ -524,6 +850,76 @@ if TerrG=='06':
 
     fig4 = px.line(df4[df4['territoire']=='Département 06'], x='Unnamed: 0', y=['Utilisateurs','Sessions','Pages vues'])        
 
+if TerrG=='07':
+    #st.write('Sélectionnez votre secteur :')
+    #cumul = ['07', '07 cumulé']
+    #cumul = st.selectbox('', cumul)
+ 
+    #if cumul=='07':
+    #  compteProCum.columns = compteProCum.columns.astype(str)
+    #  figComptePro = px.bar(compteProCum, x='datePresentation', y='07')
+      
+    #if cumul=='07 cumulé':
+    #    figComptePro = px.bar(compteProCum, x='datePresentation', y='07 cumulé')
+
+    fig4 = px.line(df4[df4['territoire']=='Département 07'], x='Unnamed: 0', y=['Utilisateurs','Sessions','Pages vues']) 
+
+if TerrG=='13':
+    st.write('Sélectionnez votre secteur :')
+    cumul = ['13', '13 cumulé']
+    cumul = st.selectbox('', cumul)
+ 
+    if cumul=='13':
+      compteProCum.columns = compteProCum.columns.astype(str)
+      figComptePro = px.bar(compteProCum, x='datePresentation', y='13')
+      
+    if cumul=='13 cumulé':
+        figComptePro = px.bar(compteProCum, x='datePresentation', y='13 cumulé')
+
+    fig4 = px.line(df4[df4['territoire']=='Département 13'], x='Unnamed: 0', y=['Utilisateurs','Sessions','Pages vues']) 
+    
+if TerrG=='15':
+    st.write('Sélectionnez votre secteur :')
+    cumul = ['15', '15 cumulé']
+    cumul = st.selectbox('', cumul)
+ 
+    if cumul=='15':
+      compteProCum.columns = compteProCum.columns.astype(str)
+      figComptePro = px.bar(compteProCum, x='datePresentation', y='15')
+      
+    if cumul=='15 cumulé':
+        figComptePro = px.bar(compteProCum, x='datePresentation', y='15 cumulé')
+
+    fig4 = px.line(df4[df4['territoire']=='Département 15'], x='Unnamed: 0', y=['Utilisateurs','Sessions','Pages vues']) 
+        
+if TerrG=='16':
+    #st.write('Sélectionnez votre secteur :')
+    #cumul = ['16', '16 cumulé']
+    #cumul = st.selectbox('', cumul)
+ 
+    #if cumul=='16':
+    #  compteProCum.columns = compteProCum.columns.astype(str)
+    #  figComptePro = px.bar(compteProCum, x='datePresentation', y='16')
+      
+    #if cumul=='16 cumulé':
+    #    figComptePro = px.bar(compteProCum, x='datePresentation', y='16 cumulé')
+
+    fig4 = px.line(df4[df4['territoire']=='Département 16'], x='Unnamed: 0', y=['Utilisateurs','Sessions','Pages vues']) 
+            
+if TerrG=='21':
+    #st.write('Sélectionnez votre secteur :')
+    #cumul = ['21', '21 cumulé']
+    #cumul = st.selectbox('', cumul)
+ 
+    #if cumul=='21':
+    #  compteProCum.columns = compteProCum.columns.astype(str)
+    #  figComptePro = px.bar(compteProCum, x='datePresentation', y='21')
+      
+    #if cumul=='21 cumulé':
+    #    figComptePro = px.bar(compteProCum, x='datePresentation', y='21 cumulé')
+
+    fig4 = px.line(df4[df4['territoire']=='Département 21'], x='Unnamed: 0', y=['Utilisateurs','Sessions','Pages vues']) 
+    
 if TerrG=='33':
     st.write('Sélectionnez votre secteur :')
     cumul = ['33', '33 cumulé']
@@ -536,7 +932,48 @@ if TerrG=='33':
 
     fig4 = px.line(df4[df4['territoire']=='Département 33'], x='Unnamed: 0', y=['Utilisateurs','Sessions','Pages vues'])        
 
-        
+if TerrG=='34':
+    #st.write('Sélectionnez votre secteur :')
+    #cumul = ['34', '34 cumulé']
+    #cumul = st.selectbox('', cumul)
+ 
+    #if cumul=='34':
+    #  compteProCum.columns = compteProCum.columns.astype(str)
+    #  figComptePro = px.bar(compteProCum, x='datePresentation', y='34')
+      
+    #if cumul=='34 cumulé':
+    #    figComptePro = px.bar(compteProCum, x='datePresentation', y='34 cumulé')
+
+    fig4 = px.line(df4[df4['territoire']=='Département 34'], x='Unnamed: 0', y=['Utilisateurs','Sessions','Pages vues']) 
+            
+if TerrG=='35':
+    #st.write('Sélectionnez votre secteur :')
+    #cumul = ['35', '35 cumulé']
+    #cumul = st.selectbox('', cumul)
+ 
+    #if cumul=='35':
+    #  compteProCum.columns = compteProCum.columns.astype(str)
+    #  figComptePro = px.bar(compteProCum, x='datePresentation', y='35')
+      
+    #if cumul=='35 cumulé':
+    #    figComptePro = px.bar(compteProCum, x='datePresentation', y='35 cumulé')
+
+    fig4 = px.line(df4[df4['territoire']=='Département 35'], x='Unnamed: 0', y=['Utilisateurs','Sessions','Pages vues']) 
+                        
+if TerrG=='36':
+    st.write('Sélectionnez votre secteur :')
+    cumul = ['36', '36 cumulé']
+    cumul = st.selectbox('', cumul)
+ 
+    if cumul=='36':
+      compteProCum.columns = compteProCum.columns.astype(str)
+      figComptePro = px.bar(compteProCum, x='datePresentation', y='36')
+      
+    if cumul=='36 cumulé':
+        figComptePro = px.bar(compteProCum, x='datePresentation', y='36 cumulé')
+
+    fig4 = px.line(df4[df4['territoire']=='Département 36'], x='Unnamed: 0', y=['Utilisateurs','Sessions','Pages vues']) 
+            
 if TerrG=='44':
     st.write('Sélectionnez votre secteur :')
     cumul = ['44', '44 cumulé']
@@ -548,7 +985,35 @@ if TerrG=='44':
         figComptePro = px.bar(compteProCum, x='datePresentation', y=cumul)
 
     fig4 = px.line(df4[df4['territoire']=='Département 44'], x='Unnamed: 0', y=['Utilisateurs','Sessions','Pages vues'])        
-        
+                                
+if TerrG=='59':
+    st.write('Sélectionnez votre secteur :')
+    cumul = ['59', '59 cumulé']
+    cumul = st.selectbox('', cumul)
+ 
+    if cumul=='59':
+      compteProCum.columns = compteProCum.columns.astype(str)
+      figComptePro = px.bar(compteProCum, x='datePresentation', y='59')
+      
+    if cumul=='59 cumulé':
+        figComptePro = px.bar(compteProCum, x='datePresentation', y='59 cumulé')
+
+    fig4 = px.line(df4[df4['territoire']=='Département 59'], x='Unnamed: 0', y=['Utilisateurs','Sessions','Pages vues']) 
+                                            
+if TerrG=='63':
+    st.write('Sélectionnez votre secteur :')
+    cumul = ['63', '63 cumulé']
+    cumul = st.selectbox('', cumul)
+ 
+    if cumul=='63':
+      compteProCum.columns = compteProCum.columns.astype(str)
+      figComptePro = px.bar(compteProCum, x='datePresentation', y='63')
+      
+    if cumul=='59 cumulé':
+        figComptePro = px.bar(compteProCum, x='datePresentation', y='63 cumulé')
+
+    fig4 = px.line(df4[df4['territoire']=='Département 63'], x='Unnamed: 0', y=['Utilisateurs','Sessions','Pages vues']) 
+            
 if TerrG=='67':
     st.write('Sélectionnez votre secteur :')
     cumul = ['67', '67 cumulé']
@@ -571,9 +1036,22 @@ if TerrG=='75':
     if cumul=='75 cumulé':
         figComptePro = px.bar(compteProCum, x='datePresentation', y=cumul)
 
-    fig4 = px.line(df4[df4['territoire']=='Paris+ivry'], x='Unnamed: 0', y=['Utilisateurs','Sessions','Pages vues'])        
-        
-       
+    fig4 = px.line(df4[df4['territoire']=='Paris+ivry'], x='Unnamed: 0', y=['Utilisateurs','Sessions','Pages vues'])           
+                                                   
+if TerrG=='76':
+    #st.write('Sélectionnez votre secteur :')
+    #cumul = ['76', '76 cumulé']
+    #cumul = st.selectbox('', cumul)
+ 
+    #if cumul=='76':
+    #  compteProCum.columns = compteProCum.columns.astype(str)
+    #  figComptePro = px.bar(compteProCum, x='datePresentation', y='76')
+      
+    #if cumul=='76 cumulé':
+    #    figComptePro = px.bar(compteProCum, x='datePresentation', y='76 cumulé')
+
+    fig4 = px.line(df4[df4['territoire']=='Département 76'], x='Unnamed: 0', y=['Utilisateurs','Sessions','Pages vues']) 
+            
 if TerrG=='77':
     st.write('Sélectionnez votre secteur :')
     cumul = ['77', '77 cumulé']
@@ -657,26 +1135,27 @@ if TerrG=='95':
         figComptePro = px.bar(compteProCum, x='datePresentation', y=cumul) 
 
     fig4 = px.line(df4[df4['territoire']=='Département 95'], x='Unnamed: 0', y=['Utilisateurs','Sessions','Pages vues'])        
-        
-#Compte Pro
-figComptePro.update_xaxes(title_text="Date d'ajout des comptes pro'", title_standoff=0.6,
-                              title_font_family="Times New Roman")
-figComptePro.update_yaxes(title_text="Nombre de comptes pro ",
-                              title_font_family="Times New Roman")
 
-annotationsCompte = dict(xref='paper', yref='paper', x=0.055, y=1,
-                             xanchor='center', yanchor='top',
-                             text='Fait le: ' + str("1 novembre 2021"),
-                             font=dict(family='Arial',
-                                       size=12,
-                                       color='rgb(150,150,150)'),
-                             showarrow=False)
-figComptePro.update_layout(title_font_family="Times New Roman",
-                               annotations=[annotationsCompte])
-figComptePro.update_traces(hovertemplate='Mois: %{x}<br> Nbre de comptes pro : %{y}') 
+if TerrG != '07' and TerrG != '34' and TerrG != '35' and TerrG != '76'and TerrG != '16' and TerrG != '21':
+    #Compte Pro
+    figComptePro.update_xaxes(title_text="Date d'ajout des comptes pro'", title_standoff=0.6,
+                                title_font_family="Times New Roman")
+    figComptePro.update_yaxes(title_text="Nombre de comptes pro ",
+                                title_font_family="Times New Roman")
 
-st.markdown('### Figure 3: Evolution du nombre de comptes professionnels')
-st.plotly_chart(figComptePro, use_container_width=True)
+    annotationsCompte = dict(xref='paper', yref='paper', x=0.055, y=1,
+                                xanchor='center', yanchor='top',
+                                text='Fait le: ' + str("1 novembre 2021"),
+                                font=dict(family='Arial',
+                                        size=12,
+                                        color='rgb(150,150,150)'),
+                                showarrow=False)
+    figComptePro.update_layout(title_font_family="Times New Roman",
+                                annotations=[annotationsCompte])
+    figComptePro.update_traces(hovertemplate='Mois: %{x}<br> Nbre de comptes pro : %{y}') 
+
+    st.markdown('### Figure 3: Evolution du nombre de comptes professionnels')
+    st.plotly_chart(figComptePro, use_container_width=True)
 
 if TerrG != 'général':
   
@@ -707,12 +1186,14 @@ fig6.update_traces(hovertemplate='<br>Nombre de mises à jour :%{y}')
 fig6.update_layout(xaxis_tickformat = '%B %Y')
 fig6.update_layout(hovermode="x unified")
 
-st.markdown('### Figure 6 : Evolution des mises à jours autonomes')
-st.plotly_chart(fig6, use_container_width=True)
+if TerrG != '07' and TerrG != '34' and TerrG != '35' and TerrG != '76' and TerrG != '21':
 
-st.markdown('### Taux de fiches mises à jour depuis moins de 3 mois, et depuis moins de 6 mois')
-col1, col2 = st.columns(2)
+    st.markdown('### Figure 6 : Evolution des mises à jours autonomes')
+    st.plotly_chart(fig6, use_container_width=True)
 
-col1.markdown(html_string_1, unsafe_allow_html=True)
+    st.markdown('### Taux de fiches mises à jour depuis moins de 3 mois, et depuis moins de 6 mois')
+    col1, col2 = st.columns(2)
 
-col2.markdown(html_string_2, unsafe_allow_html=True)
+    col1.markdown(html_string_1, unsafe_allow_html=True)
+
+    col2.markdown(html_string_2, unsafe_allow_html=True)
