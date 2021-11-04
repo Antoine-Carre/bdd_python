@@ -980,9 +980,9 @@ if TerrG=='44':
     cumul = st.selectbox('', cumul)
 
     if cumul=='44':
-        figComptePro = px.bar(compteProCum, x='datePresentation', y=cumul)
+        figComptePro = px.bar(compteProCum, x='datePresentation', y='44')
     if cumul=='44 cumulé':
-        figComptePro = px.bar(compteProCum, x='datePresentation', y=cumul)
+        figComptePro = px.bar(compteProCum, x='datePresentation', y='44 cumulé')
 
     fig4 = px.line(df4[df4['territoire']=='Département 44'], x='Unnamed: 0', y=['Utilisateurs','Sessions','Pages vues'])        
                                 
