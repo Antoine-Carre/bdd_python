@@ -383,7 +383,7 @@ if TerrG=='44':
 
     fig4Bar = px.bar(s1_cum, x="datePresentation",y=['Recherches dep(44) cumulé'])
 
-    fig6 = px.bar(df_history_data_grp[df_history_data_grp.departement == 'Loire-Atlantiques'].groupby(['monthly'], as_index=False).agg({'Equipe Solinum':'sum',
+    fig6 = px.bar(df_history_data_grp[df_history_data_grp.departement == 'Loire-Atlantique'].groupby(['monthly'], as_index=False).agg({'Equipe Solinum':'sum',
                                                           'Equipe territoriale':'sum','Les acteurs':'sum'}),
              x="monthly", y=["Equipe Solinum","Equipe territoriale","Les acteurs"], custom_data=['variable'], color_discrete_sequence= [ '#7201a8', '#bd3786', '#2896A0']) 
 
