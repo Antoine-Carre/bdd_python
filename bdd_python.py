@@ -328,7 +328,7 @@ fig6.update_traces(hovertemplate='<br>Nombre de mises à jour :%{y}')
 fig6.update_layout(xaxis_tickformat = '%B %Y')
 fig6.update_layout(hovermode="x unified")
 
-if TerrG != '07' and TerrG != '34' and TerrG != '35' and TerrG != '76' and TerrG != '21':
+if TerrG != '07' and TerrG != '15' and TerrG != '34' and TerrG != '35' and TerrG != '76' and TerrG != '21':
 
     st.markdown('### Figure 6 : Evolution des mises à jours autonomes')
     st.plotly_chart(fig6, use_container_width=True)
