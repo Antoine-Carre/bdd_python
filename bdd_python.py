@@ -276,7 +276,9 @@ if TerrG=='07'or TerrG=='16'or TerrG=='21'or TerrG=='34'or TerrG=='35' or TerrG=
     #if cumul=='07 cumulé':
     #    figComptePro = px.bar(compteProCum, x='datePresentation', y='07 cumulé')
 
-    fig4 = px.line(df4[df4['territoire']=='Département 07'], x='Unnamed: 0', y=['Utilisateurs','Sessions','Pages vues']) 
+    df4 = df4[df4['territoire']==f'Département {TerrG}'].reset_index()
+    df4 = df4[15:]
+    fig4 = px.line(df4, x='Unnamed: 0', y=['Utilisateurs','Sessions','Pages vues']) 
 
 if TerrG != '07' and TerrG != '16' and TerrG != '21' and TerrG != '34' and TerrG != '35' and TerrG != '76':
     #Compte Pro
