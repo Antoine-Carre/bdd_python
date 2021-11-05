@@ -107,14 +107,14 @@ if TerrG=='06' or TerrG=='33' or  TerrG=='13'or TerrG=='44' or TerrG=='67' or Te
     """
 
 if TerrG=='13' or TerrG=='16' or TerrG=='36' or TerrG=='59' or TerrG=='63' or TerrG=='16':
-    df = df[42:]
+    df = df[40:]
 
     fig1 = px.line(df, x="Unnamed: 0", y=[f'Suivies (dep:{TerrG})',f'En ligne (dep:{TerrG})', f'En brouillon (dep:{TerrG})',f'Mise à jour (dep:{TerrG})', 
                                                     f'Fiches reliées aux comptes pros (dep:{TerrG})'])                                         
     figBar = px.bar(df, x="Unnamed: 0",y=[f'Suivies (dep:{TerrG}) cumulé', f'En ligne (dep:{TerrG}) cumulé', f'En brouillon (dep:{TerrG}) cumulé', 
                                             f'Mise à jour (dep:{TerrG}) cumulé',  f'Fiches reliées aux comptes pros (dep:{TerrG}) cumulé'])
 
-    s = s[24:]
+    s = s[22:]
     s1 = s.filter(regex=TerrG)
     s1 = pd.merge(s['datePresentation'],s1, how='left', left_index=True, right_index=True)
 
@@ -141,11 +141,11 @@ if TerrG=='13' or TerrG=='16' or TerrG=='36' or TerrG=='59' or TerrG=='63' or Te
 
 # Second batch :    
 if TerrG=='07' or TerrG=='15' or TerrG=='21' or TerrG=='34' or TerrG=='35' or TerrG=='76':
-    df = df[42:]
+    df = df[40:]
     fig1 = px.line(df, x="Unnamed: 0", y=[f'Suivies (dep:{TerrG})',f'En brouillon (dep:{TerrG})',f'Mise à jour (dep:{TerrG})'])                                         
     figBar = px.bar(df, x="Unnamed: 0",y=[f'Suivies (dep:{TerrG}) cumulé', f'En brouillon (dep:{TerrG}) cumulé', f'Mise à jour (dep:07) cumulé'])
 
-    s = s[24:]
+    s = s[22:]
     s1 = s.filter(regex=f'{TerrG}')
     s1 = pd.merge(s['datePresentation'],s1, how='left', left_index=True, right_index=True)
 
