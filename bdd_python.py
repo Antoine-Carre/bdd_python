@@ -35,6 +35,9 @@ df_maj_6_months.set_index('territoire', inplace=True)
 
 HtmlFile = open("./data_csv/map.html", 'r', encoding='utf-8')
 
+HtmlFile_2 = open("./data_csv/search_map.html", 'r', encoding='utf-8')
+
+
 # Define department
 TerritoireSoliguide = ['06', '07','13','15','16','21', '33','34','35','36', '44','59','63', '67', '75','76','77', '78','91', '92', '93', '94', '95']
 TerrG = ["général"] + TerritoireSoliguide
@@ -341,3 +344,8 @@ if TerrG != '07' and TerrG != '15' and TerrG != '34' and TerrG != '35' and TerrG
     col1.markdown(html_string_1, unsafe_allow_html=True)
 
     col2.markdown(html_string_2, unsafe_allow_html=True)
+
+# Création de la carte avec pour centre : le centre de la France
+st.markdown('### Figure 7: Nombre de recherches sur Soliguide effectuées par commune')
+source_code = HtmlFile_2.read() 
+components.html(source_code, height = 600)
