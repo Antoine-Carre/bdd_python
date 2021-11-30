@@ -50,7 +50,7 @@ fig1.update_yaxes(title_text="Nombre de fiches (non cumulé)", title_font_family
 
 annotations = dict(xref='paper', yref='paper', x=0.055, y=1,
                              xanchor='center', yanchor='top',
-                             text='Fait le: ' + str("28 novembre 2021"),
+                             text='Fait le: ' + str("30 novembre 2021"),
                              font=dict(family='Arial',
                                        size=12,
                                        color='rgb(150,150,150)'),
@@ -66,7 +66,7 @@ figBar.update_yaxes(title_text="Nombre de fiches (non cumulé)", title_font_fami
 
 annotations = dict(xref='paper', yref='paper', x=0.055, y=1,
                              xanchor='center', yanchor='top',
-                             text='Fait le: ' + str("28 novembre 2021"),
+                             text='Fait le: ' + str("30 novembre 2021"),
                              font=dict(family='Arial',
                                        size=12,
                                        color='rgb(150,150,150)'),
@@ -80,7 +80,7 @@ figSearch.update_yaxes(title_text="Nombre de recherches (non cumulé)", title_fo
 
 annotationsSearch = dict(xref='paper', yref='paper', x=0.055, y=1,
                              xanchor='center', yanchor='top',
-                             text='Fait le: ' + str("28 novembre 2021"),
+                             text='Fait le: ' + str("30 novembre 2021"),
                              font=dict(family='Arial',
                                        size=12,
                                        color='rgb(150,150,150)'),
@@ -101,7 +101,7 @@ titleCompte = {
         'yanchor': 'top'}
 annotationsSearch = dict(xref='paper', yref='paper', x=0.055, y=1,
                              xanchor='center', yanchor='top',
-                             text='Fait le: ' + str("28 novembre 2021"),
+                             text='Fait le: ' + str("30 novembre 2021"),
                              font=dict(family='Arial',
                                        size=12,
                                        color='rgb(150,150,150)'),
@@ -142,7 +142,7 @@ figComptePro.update_yaxes(title_text="Nombre de comptes pro ",
 
 annotationsCompte = dict(xref='paper', yref='paper', x=0.055, y=1,
                              xanchor='center', yanchor='top',
-                             text='Fait le: ' + str("28 novembre 2021"),
+                             text='Fait le: ' + str("30 novembre 2021"),
                              font=dict(family='Arial',
                                        size=12,
                                        color='rgb(150,150,150)'),
@@ -159,7 +159,7 @@ fig4.update_xaxes(title_text="Intervalle de temps en mois", title_standoff=0.6, 
 fig4.update_yaxes(title_text="Nombre d'utilisateurs/sessions/pages vues", title_font_family="Times New Roman")
 annotations = dict(xref='paper', yref='paper', x=0.055, y=1,
                                  xanchor='center', yanchor='top',
-                                 text='Fait le: ' + str("28 novembre 2021"),
+                                 text='Fait le: ' + str("30 novembre 2021"),
                                  font=dict(family='Arial',
                                            size=12,
                                            color='rgb(150,150,150)'),
