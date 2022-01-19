@@ -7,7 +7,7 @@ from datetime import date
 import streamlit.components.v1 as components
 
 # option
-st.set_page_config(page_title="Suivi des indicateurs de la base de données - Octobre 2021",
+st.set_page_config(page_title="Suivi des indicateurs de la base de données - Décembre 2022",
                    page_icon="https://pbs.twimg.com/profile_images/1321098074765361153/F4UFTeix.png",
                    layout="wide",)
 
