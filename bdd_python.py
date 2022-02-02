@@ -24,6 +24,8 @@ s = pd.read_csv("./data_csv/searchWithDatePresentation3.csv")
 s = s[s.datePresentation != "2022-02-01"]
 
 compteProCum = pd.read_csv("./data_csv/orga_figure3.csv")
+compteProCum = compteProCum[compteProCum.createdAt != "2022-02"]
+
 df4 = pd.read_csv("data_csv/GAdata.csv")
 
 df_history_data_grp = pd.read_csv("./data_csv/mise_a_jour.csv")
