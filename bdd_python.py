@@ -18,6 +18,7 @@ st.write("[Lien vers les chiffres](https://airtable.com/appfuLygVTjBO0qk1/tblnFp
 
 
 df = pd.read_csv("./data_csv/fiche_figure1.csv")
+df = df.iloc[:-1]
 s = pd.read_csv("./data_csv/searchWithDatePresentation3.csv")
 compteProCum = pd.read_csv("./data_csv/orga_figure3.csv")
 df4 = pd.read_csv("data_csv/GAdata.csv")
