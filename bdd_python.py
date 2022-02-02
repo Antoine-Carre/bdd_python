@@ -24,6 +24,7 @@ compteProCum = pd.read_csv("./data_csv/orga_figure3.csv")
 df4 = pd.read_csv("data_csv/GAdata.csv")
 
 df_history_data_grp = pd.read_csv("./data_csv/mise_a_jour.csv")
+df_history_data_grp = df_history_data_grp[df_history_data_grp.monthly != "2022-02"]
 df_history_data_grp.rename(columns={'status_ADMIN_SOLIGUIDE':'Equipe Solinum',
                                    'status_ADMIN_TERRITORY':'Equipe territoriale',
                                    'status_PRO':'Les acteurs'}, inplace=True)
