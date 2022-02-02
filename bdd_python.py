@@ -27,7 +27,7 @@ compteProCum = pd.read_csv("./data_csv/orga_figure3.csv")
 compteProCum = compteProCum[compteProCum.createdAt != "2022-02"]
 
 df4 = pd.read_csv("data_csv/GAdata.csv")
-
+st.write(df4)
 df_history_data_grp = pd.read_csv("./data_csv/mise_a_jour.csv")
 df_history_data_grp = df_history_data_grp[df_history_data_grp.monthly != "2022-02"]
 df_history_data_grp.rename(columns={'status_ADMIN_SOLIGUIDE':'Equipe Solinum',
