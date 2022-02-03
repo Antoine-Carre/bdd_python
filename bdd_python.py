@@ -291,7 +291,7 @@ if TerrG=='07'or TerrG=='16'or TerrG=='21'or TerrG=='35':
     df4 = df4[15:]
     fig4 = px.line(df4, x='Unnamed: 0', y=['Utilisateurs','Sessions','Pages vues']) 
 
-if TerrG != '07' and TerrG != '16' and TerrG != '21' and TerrG != '34' and TerrG != '35' and TerrG != '76':
+if TerrG != '07' and TerrG != '16' and TerrG != '21' and TerrG != '35':
     #Compte Pro
     figComptePro.update_xaxes(title_text="Date d'ajout des comptes pro'", title_standoff=0.6,
                                 title_font_family="Times New Roman")
