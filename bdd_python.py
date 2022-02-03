@@ -261,7 +261,7 @@ st.plotly_chart(figSearch, use_container_width=True)
 st.plotly_chart(fig4Bar, use_container_width=True)
 
 
-if TerrG=='06' or TerrG=='13'or TerrG=='15'or TerrG=='33' or TerrG=='34'or TerrG=='36'or TerrG=='44' or TerrG=='59' or TerrG=='63' or TerrG=='67' or TerrG=='75' or TerrG=='76' or TerrG=='77' or TerrG=='78' or TerrG=='91' or TerrG=='92' or TerrG=='93' or TerrG=='94' or TerrG=='95':
+if TerrG=='06' or TerrG=='13'or TerrG=='15'or TerrG=='33' or TerrG=='36'or TerrG=='44' or TerrG=='59' or TerrG=='63' or TerrG=='67' or TerrG=='75' or TerrG=='77' or TerrG=='78' or TerrG=='91' or TerrG=='92' or TerrG=='93' or TerrG=='94' or TerrG=='95':
     st.write('Sélectionnez votre secteur :')
     cumul = [f'{TerrG}', f'{TerrG} cumulé']
     cumul = st.selectbox('', cumul)
@@ -275,7 +275,7 @@ if TerrG=='06' or TerrG=='13'or TerrG=='15'or TerrG=='33' or TerrG=='34'or TerrG
 
     fig4 = px.line(df4[df4['territoire']==f'Département {TerrG}'], x='Unnamed: 0', y=['Utilisateurs','Sessions','Pages vues'])        
 
-if TerrG=='07'or TerrG=='16'or TerrG=='21'or TerrG=='35':
+if TerrG=='07'or TerrG=='16'or TerrG=='21' or TerrG=='34'or TerrG=='35' or TerrG=='76':
     #st.write('Sélectionnez votre secteur :')
     #cumul = ['07', '07 cumulé']
     #cumul = st.selectbox('', cumul)
