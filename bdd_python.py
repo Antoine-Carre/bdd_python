@@ -332,9 +332,9 @@ if TerrG != 'général':
     st.plotly_chart(fig4, use_container_width=True)
 
 # Création de la carte avec pour centre : le centre de la France
-st.markdown('### Figure 5: Nombre de fiches suivies (en ligne et en brouillon) par commune')
-source_code = HtmlFile.read() 
-components.html(source_code, height = 600)
+#st.markdown('### Figure 5: Nombre de fiches suivies (en ligne et en brouillon) par commune')
+#source_code = HtmlFile.read() 
+#components.html(source_code, height = 600)
 
 
 fig6.update_traces(hovertemplate='<br>Nombre de mises à jour :%{y}') 
